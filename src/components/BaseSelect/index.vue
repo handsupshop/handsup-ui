@@ -31,10 +31,12 @@ export default {
     exportClass () {
       if (this.color === 'basic') {
         return [
-          'border-gray-300',
+          'border-gray-600',
+          'hover:border-gray-700',
           'focus:border-primary',
           'disabled:bg-gray-100',
-          'disabled:text-gray-400']
+          'disabled:border-gray-600',
+          'disabled:text-gray-700']
       } else {
         return [
           `text-${this.color}`,

@@ -36,9 +36,9 @@ export default {
           ]
         } else {
           return [
-            'text-gray-600',
-            'bg-gray-200',
-            'border-gray-200',
+            'text-gray-900',
+            'bg-gray-400',
+            'border-gray-400',
             'hover:text-white',
             'hover:bg-primary',
             'hover:border-primary'
@@ -47,16 +47,16 @@ export default {
       } else {
         if (this.color === 'basic') {
           return [
-            'text-gray-700',
+            'text-black',
             'bg-white',
-            'border-gray-300',
+            'border-gray-600',
             'hover:text-white',
             'hover:bg-primary',
             'hover:border-primary'
           ]
         } else {
           return [
-            'text-gray-700',
+            'text-black',
             'bg-white',
             `border-${this.color}`,
             'hover:text-white',
