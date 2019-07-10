@@ -12,20 +12,32 @@ module.exports = {
     colors: {
       transparent: 'transparent',
 
-      black: '#000',
+      black: '#303133',
       white: '#fff',
 
       gray: {
-        100: '#f7fafc',
-        200: '#edf2f7',
-        300: '#e2e8f0',
-        400: '#cbd5e0',
-        500: '#a0aec0',
-        600: '#718096',
-        700: '#4a5568',
-        800: '#2d3748',
-        900: '#1a202c'
+        100: '#f5f7fa',
+        200: '#f2f6fc',
+        300: '#f0f2f5',
+        400: '#ebeef5',
+        500: '#e4e7ed',
+        600: '#dcdfe6',
+        700: '#c0c4cc',
+        800: '#909399',
+        900: '#606266'
       },
+      // ,gray: {
+      //   100: '#f7fafc',
+      //   200: '#edf2f7',
+      //   300: '#e2e8f0',
+      //   400: '#cbd5e0',
+      //   500: '#a0aec0',
+      //   600: '#718096',
+      //   700: '#4a5568',
+      //   800: '#2d3748',
+      //   900: '#1a202c'
+      // },
+
       primary: {
         default: 'var(--primary)',
         dark: 'var(--primary-dark)',
