@@ -1,0 +1,49 @@
+$iPhone5: 320px !default;
+$iPhone: 600px !default;
+$xs: 767px !default;
+$sm: 768px !default;
+$md: 992px !default;
+$lg: 1200px !default;
+$xl: 1920px !default;
+
+@mixin rwd_iPhone5 {
+  @media (max-width: $iPhone5) {
+    @content;
+  }
+}
+
+@mixin rwd_iPhone {
+  @media (max-width: $iPhone) {
+    @content;
+  }
+}
+
+@mixin rwd_xs {
+  @media (max-width: $sm -1) {
+    @content;
+  }
+}
+
+@mixin rwd_sm {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin rwd_md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin rwd_lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin rwd_xl {
+  @media (min-width: $xl) {
+    @content;
+  }
+}

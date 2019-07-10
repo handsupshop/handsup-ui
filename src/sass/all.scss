@@ -1,0 +1,31 @@
+// tailwind ------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Reset ------------------------
+@import '@/sass/public/_reboot.scss';
+
+// 參數----------------------------
+@import '@/sass/mixins/_variables.scss';
+
+// Tool----------------------------
+@import '@/sass/mixins/_common.scss';
+@import '@/sass/mixins/_text.scss';
+@import '@/sass/mixins/_rwd.scss';
+@import '@/sass/mixins/_accordion.scss';
+@import '@/sass/mixins/_card.scss';
+@import '@/sass/mixins/_checkbox.scss';
+
+// 基本設定----------------------------
+@import '@/sass/public/_base.scss';
+@import '@/sass/public/_layout.scss';
+
+// CSS (小元件,module,或其他樣式)----------------------------
+@import '@/sass/public/_flex.scss';
+@import '@/sass/public/_fonts.scss';
+// @import '@/sass/public/_spacer.scss';
+@import '@/sass/public/_inputs.scss';
+@import '@/sass/public/_buttons.scss';
+@import '@/sass/public/_transition.scss';
+@import '@/sass/public/_custom.scss';

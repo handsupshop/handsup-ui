@@ -1,0 +1,44 @@
+// checkbox 元件
+.baseCheckbox-checkbox {
+  display: none;
+}
+.baseCheckbox-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.3em;
+  cursor: pointer;
+  font-size: 18px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: #e6e6e6;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    display: none;
+    width: 6px;
+    height: 10px;
+    transform: rotate(45deg);
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+  }
+}
+.baseCheckbox-checkbox:checked ~ .baseCheckbox-icon {
+  &:before {
+    background: $primary;
+  }
+  &:after {
+    display: block;
+  }
+}

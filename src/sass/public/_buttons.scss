@@ -1,0 +1,155 @@
+// 架構
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: 0.1s;
+  text-align: center;
+  white-space: nowrap;
+  color: $vr-dark;
+  border: 1px solid $line-vr-dark;
+  border-radius: 4px;
+  outline: 0;
+  background: $white;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-appearance: none;
+
+}
+
+.btn {
+  &:focus {
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:active,
+  &:hover,
+  &.btn-active,
+  &.btn-hover {
+    text-decoration: none;
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.4;
+    color: $vr-dark;
+    border-color: $line-vr-light;
+    background-color: $white;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.btn:not(.btn-block)+.btn:not(.btn-block) {
+  margin-left: 10px;
+}
+
+// 大小
+.btn-md {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-sm {
+  padding: 9px 15px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.btn-mini {
+  padding: 7px 15px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// 顏色
+@each $name,
+$color in $colors {
+  .btn-#{$name} {
+    color: $white;
+    border-color: $color;
+    background-color: $color;
+
+    &:active,
+    &:hover,
+    &.btn-active,
+    &.btn-hover {
+      color: $white;
+      border-color: darken($color, 10%);
+      background-color: darken($color, 10%);
+    }
+
+    &.disabled,
+    &[disabled] {
+      color: $vr-dark;
+      border-color: $color;
+      background-color: $white;
+    }
+  }
+}
+
+.btn-primary {
+
+  &:active,
+  &:hover,
+  &.btn-active,
+  &.btn-hover {
+    color: $white;
+    border-color: $primary-dark;
+    background-color: $primary-dark;
+  }
+
+  &.disabled,
+  &[disabled] {
+    color: $white;
+    background-color: $primary;
+  }
+}
+
+.btn-secondary {
+  color: $vr-dark;
+  border-color: $primary;
+  background-color: $white;
+
+  &:active,
+  &:hover,
+  &.btn-active,
+  &.btn-hover {
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+  }
+
+  &.disabled,
+  &[disabled] {
+    color: $vr-dark;
+    border-color: $primary;
+    background-color: $white;
+  }
+}
+
+a.btn.btn-holo {
+  color: $white;
+  border-color: $white;
+  background: transparent;
+
+  &:hover {
+    color: $black;
+    background: $white;
+  }
+}

@@ -1,0 +1,72 @@
+// 手風琴
+@mixin accordion($class) {
+  .#{$class} {
+    margin: 0 auto;
+    border-top: 1px solid rgba(#000, 0.1);
+
+    > li {
+      position: relative;
+      cursor: pointer;
+
+      > input[type='radio'] {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        cursor: pointer;
+        opacity: 0;
+      }
+    }
+
+    &-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 70px;
+      padding: 15px;
+      border-bottom: 1px solid rgba(#000, 0.1);
+
+      &:after {
+        content: '\f107';
+        @include size(32px);
+
+        position: relative;
+        left: 10px;
+        margin-left: auto;
+        font-family: 'Font Awesome 5 Pro';
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        color: $vr-light;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+
+    &-body {
+      max-height: 0;
+      transition: 0.4s;
+      transform: scaleY(0);
+      transform-origin: top;
+      opacity: 0;
+    }
+
+    input[type='radio']:checked,
+    input[type='radio'].checked {
+      ~ .#{$class}-header {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+
+      ~ .#{$class}-body {
+        max-height: auto;
+        max-height: 1000px;
+        transform: scaleY(1);
+        opacity: 1;
+        transition-duration: 0.5s;
+      }
+    }
+  }
+}

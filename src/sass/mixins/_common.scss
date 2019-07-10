@@ -1,0 +1,136 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($main, $other: $main) {
+  display: flex;
+  justify-content: $main;
+  align-items: $other;
+}
+
+@mixin outline($color) {
+  outline: 1px solid $color;
+}
+
+@mixin bg-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+@mixin v-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+@mixin v-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+// https://codepen.io/Kanboo/pen/JmEWOz
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin truncate($line: 0) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if ($line > 0) {
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  }
+
+  @else {
+    white-space: nowrap;
+  }
+}
+
+@mixin rwdImg($w, $h: $w) {
+  position: relative;
+  display: block;
+  float: left;
+  overflow: hidden;
+  width: $w;
+  padding-top: $h;
+  text-align: left;
+
+  >img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 0% 0%;
+  }
+}
+
+@mixin list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+// 根據字體大小，自動計算行高---------------------Start
+// https://blog.csdn.net/macanfa/article/details/51747054
+
+$baseLine: 10px;
+$lineRatio: 1.2; //行高比例
+
+@function rhythm($level) {
+  // ceil($value)：向上取整；
+  @return $baseLine * ceil($level);
+}
+
+@function line($size) {
+  @return rhythm($size * $lineRatio / $baseLine);
+}
+
+@mixin font($size, $line-height: auto) {
+  $line: line($size);
+
+  font-size: $size;
+
+  @if $line-height==auto or $line-height < $line {
+    line-height: $line;
+  }
+
+  @else {
+    line-height: $line-height;
+  }
+}
+
+// 使用方式
+// @include font(18px);
+// @include font(20px, 60px);
+
+// 根據字體大小，自動計算行高---------------------End
+
+// gray 階層--------------------------Start
+@function gray($index: 1) {
+  @if $index < 1 {
+    $index: 1;
+  }
+
+  @if $index>10 {
+    $index: 10;
+  }
+
+  @return adjust-color(black, $lightness: 10% * $index);
+}
+
+// gray 階層--------------------------End
+
+// 有水平分隔線的list
+%list-underborder {
+  >li+li {
+    border-top: 1px solid rgba(#000, 0.1);
+  }
+}

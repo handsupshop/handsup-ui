@@ -1,0 +1,70 @@
+// 有留言數量泡泡的標題
+%header-message {
+  i {
+    position: relative;
+    margin: -8px;
+    padding: 8px;
+    cursor: pointer;
+    color: $primary;
+    font-size: h(5);
+
+    span {
+      // position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      vertical-align: top;
+      margin: -6px;
+      padding: 0 5px;
+      text-align: center;
+      color: $white;
+      border-radius: 1.5em;
+      background-color: $danger;
+      font-size: 10px;
+      line-height: 16px;
+    }
+  }
+}
+
+// 有陰影header標題的卡片
+// $class >> 卡片class名稱
+// $body-padding >> 卡片body的內距值（預設為不用padding)
+@mixin card-group($class, $body-padding: false) {
+  .#{$class} {
+    font-size: 0.875rem; //14px
+    background-color: $white;
+    & + .#{$class} {
+      margin-top: 10px;
+    }
+    &-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      font-weight: 500;
+      line-height: 1;
+      color: $vr-dark;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+
+      .img-box {
+        border-radius: 50%;
+
+        @include rwdImg(1.71em);
+      }
+    }
+    // 如果body需要padding時
+    @if ($body-padding) {
+      &-body {
+        padding: $body-padding;
+      }
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+      border-top: 1px solid $line-dark;
+    }
+  }
+}

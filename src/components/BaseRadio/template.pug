@@ -1,0 +1,10 @@
+//- span.inline-block.w-4.align-middle.align-center
+label.baseRadio(:class="[exportDisplay, exportDisabled]")
+  input.baseRadio-radio(
+    type="radio"
+    :name="name"
+    :value="value"
+    :disabled="disabled"
+    v-model="picked")
+  i.baseRadio-icon
+  span {{ label }}

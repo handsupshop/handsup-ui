@@ -1,0 +1,191 @@
+.m-12.p-12.bg-white
+  h4.my-8 Color Standard
+  .flex.my-2.text-center
+    .w-20.mr-8.text-left 色系
+    .w-20.mr-8 Original
+    .w-20.mr-8 dark (hover)
+    .w-20.mr-8 light
+    .w-20.mr-8 vr-light
+
+  .flex.my-8.items-center
+    .w-20.mr-8 primary
+    .mr-8.w-20.h-20.bg-primary
+    .mr-8.w-20.h-20.bg-primary-dark
+    .mr-8.w-20.h-20.bg-primary-light
+    .mr-8.w-20.h-20.bg-primary-vr-light
+
+  .flex.my-8.items-center
+    .w-20.mr-8 success
+    .mr-8.w-20.h-20.bg-success
+    .mr-8.w-20.h-20.bg-success-dark
+    .mr-8.w-20.h-20.bg-success-light
+    .mr-8.w-20.h-20.bg-success-vr-light
+
+  .flex.my-8.items-center
+    .w-20.mr-8 warning
+    .mr-8.w-20.h-20.bg-warning
+    .mr-8.w-20.h-20.bg-warning-dark
+    .mr-8.w-20.h-20.bg-warning-light
+    .mr-8.w-20.h-20.bg-warning-vr-light
+
+  .flex.my-8.items-center
+    .w-20.mr-8 danger
+    .mr-8.w-20.h-20.bg-danger
+    .mr-8.w-20.h-20.bg-danger-dark
+    .mr-8.w-20.h-20.bg-danger-light
+    .mr-8.w-20.h-20.bg-danger-vr-light
+
+  hr.my-16.border-b
+
+  h4.my-8 Button
+  .my-4
+    .my-1.mr-8 fill
+    BaseButton(color="basic") basic (預設btn)
+    BaseButton(color="primary") primary
+    BaseButton(color="success") success
+    BaseButton(color="warning") warning
+    BaseButton(color="danger") danger
+
+    .my-1.mr-8 fill disabled
+    BaseButton(color="basic" disabled) basic (預設btn)
+    BaseButton(color="primary" disabled) primary
+    BaseButton(color="success" disabled) success
+    BaseButton(color="warning" disabled) warning
+    BaseButton(color="danger" disabled) danger
+
+  .my-4
+    .my-1.mr-8 outline
+    BaseButton(color="basic" outline) basic outline (預設色)
+    BaseButton(color="primary" outline) primary outline
+    BaseButton(color="success" outline) success outline
+    BaseButton(color="warning" outline) warning outline
+    BaseButton(color="danger" outline) danger outline
+
+    .my-1.mr-8 outline disabled
+    BaseButton(color="basic" outline disabled) basic outline (預設色)
+    BaseButton(color="primary" outline disabled) primary outline
+    BaseButton(color="success" outline disabled) success outline
+    BaseButton(color="warning" outline disabled) warning outline
+    BaseButton(color="danger" outline disabled) danger outline
+
+  .my-4
+    .my-1.mr-8 size
+    BaseButton(color="primary" size="sm") 小按鈕 size="sm"
+    BaseButton(color="primary" size="md") 中按鈕 size="md" (預設)
+    BaseButton(color="primary" size="lg") 大按鈕 size="lg"
+
+  .my-4
+    .my-1.mr-8 block
+    .p-4.border(class="w-1/2")
+      BaseButton(color="primary" block) 滿版按鈕 block
+
+  hr.my-16.border-b
+
+  h4.my-8 Form
+  .my-4.flex
+    .py-4(class="w-2/5")
+      h5.my-1.mr-8 normale
+      .my-6
+        p.mb-1 placeholder+autofocus
+        baseInput(placeholder="請填入資訊" autofocus)
+      .my-6
+        p.mb-1 預設input
+        baseInput(value="預設input")
+      .my-6
+        p.mb-1 primary
+        baseInput(color="primary" value="primary")
+      .my-6
+        p.mb-1 success
+        baseInput(color="success" value="success")
+      .my-6
+        p.mb-1 warning
+        baseInput(color="warning" value="warning")
+      .my-6
+        p.mb-1 danger
+        baseInput(color="danger" value="danger")
+
+    .py-4.ml-16(class="w-2/5")
+      h5.my-1.mr-8 disabled
+      .my-6
+        p.mb-1 select
+        baseSelect(:options="selectOptionTemp" disabled)
+      .my-6
+        p.mb-1 預設input
+        baseInput(value="預設input" disabled)
+      .my-6
+        p.mb-1 primary
+        baseInput(color="primary" value="primary" disabled)
+      .my-6
+        p.mb-1 success
+        baseInput(color="success" value="success" disabled)
+      .my-6
+        p.mb-1 warning
+        baseInput(color="warning" value="warning" disabled)
+      .my-6
+        p.mb-1 danger
+        baseInput(color="danger" value="danger" disabled)
+
+  .my-8.flex
+    .py-4(class="w-2/5")
+      h5.my-1.mr-8 size
+      .my-6
+        p.mb-1 size="sm"
+        baseInput(size="sm" value="小input (sm)")
+        baseSelect.mt-2(size="sm" :options="selectOptionTemp")
+      .my-6
+        p.mb-1 size="md"
+        baseInput(size="md" value="中input (md) 預設")
+        baseSelect.mt-2(size="md" :options="selectOptionTemp")
+      .my-6
+        p.mb-1 size="lg"
+        baseInput(size="lg" value="大input (lg)")
+        baseSelect.mt-2(size="lg" :options="selectOptionTemp")
+
+    .py-4.ml-16(class="w-2/5")
+      h5.my-1.mr-8 textarea
+      p.mt-6.mb-1 block
+      BaseTextarea(rows="5" placeholder="請填寫")
+      p.mt-4.mb-1 disabled
+      BaseTextarea(rows="5" placeholder="不能填寫" disabled)
+      p.mt-4.mb-1 inline
+      BaseTextarea.w-32(size="sm" message="小 (sm)" placeholder="請填寫" inline)
+      BaseTextarea.w-32(size="md" message="中 (md)" placeholder="請填寫" inline)
+      BaseTextarea.w-32(size="lg" message="大 (lg)" placeholder="請填寫" inline)
+
+  .my-8.flex
+    .py-4(class="w-2/5")
+      h5.my-1 radio
+      label.mr-4 性別
+      BaseRadio(name="gender" label="男" value="male" @change="changeGender")
+      BaseRadio(name="gender" label="女" value="femal" @change="changeGender")
+      BaseRadio(name="gender" label="無 (disabled)" value="none" @change="changeGender" disabled)
+      h5.mt-4.mb-1 radio block
+      BaseRadio(name="options" label="111" value="aaa" @change="changeValue" block)
+      BaseRadio(name="options" label="222" value="bbb" @change="changeValue" block)
+      BaseRadio(name="options" label="無 (disabled)" value="none" @change="changeGender" disabled)
+
+      h5.mt-8.mb-1 checkbox
+      BaseCheckbox(name="checkboxName" label="選項1" value="check01" @change="changeCheckbox")
+      BaseCheckbox(name="checkboxName" label="選項2" value="" @change="changeCheckbox")
+      BaseCheckbox(name="checkboxName" label="無 (disabled)" value="" @change="changeCheckbox" disabled)
+      h5.mt-4.mb-1 checkbox block
+      BaseCheckbox(name="checkboxName2" label="選項1" value="check03" block)
+      BaseCheckbox(name="checkboxName2" label="選項2" value="" block)
+      BaseCheckbox(name="checkboxName2" label="無 (disabled)" value="" block disabled)
+
+    .py-4.ml-16(class="w-2/5")
+      h5.my-1 inline
+      .my-6
+        label.mr-4 姓名
+        baseInput(value="someone" inline)
+        baseInput(value="last name" inline)
+        baseSelect(:options="selectOptions" @change="hadleSelectChange" inline)
+        baseButton(color="primary") send
+
+  hr.my-16.border-b
+
+  //- .my-8
+  h4.my-8 Modal
+  //- BaseModal()
+    template(v-slot:modalHeader) 標題
+    template(v-slot:modalBody) body

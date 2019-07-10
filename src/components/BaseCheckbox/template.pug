@@ -1,0 +1,9 @@
+label.baseCheckbox(:class="[exportDisplay, exportDisabled]")
+  input.baseCheckbox-checkbox(
+    type="checkbox"
+    :name="name"
+    :value="value"
+    :disabled="disabled"
+    v-model="picked")
+  i.baseCheckbox-icon
+  span {{ label }}

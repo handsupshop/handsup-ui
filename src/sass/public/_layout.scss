@@ -1,0 +1,48 @@
+#app {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  > * {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// 商城 wrapper
+.wrap {
+  display: grid;
+  grid-template-rows: calc(100% - 50px) auto;
+  grid-template-columns: 1fr;
+  height: 100%;
+  margin: 0 auto;
+  outline: 1px solid $line-dark;
+
+  @include rwd_sm {
+    .wrap {
+      max-width: 768px;
+    }
+  }
+
+  .scrollable-section {
+    grid-row: 1 / 2;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    header,
+    main {
+      width: 100%;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  }
+
+  footer {
+    grid-row: 2 / 3;
+    margin: 0 auto;
+  }
+}

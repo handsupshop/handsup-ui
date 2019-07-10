@@ -1,0 +1,10 @@
+.baseModal.fixed.inset-0.flex.items-center.justify-center
+  .mask.fixed.inset-0.bg-black.opacity-50
+  .baseModal-cont.relative.bg-white.rounded.overflow-hidden(class="w-1/2")
+    .baseModal-header.flex.items-center.justify-between.p-4(v-if="$slots.modalHeader")
+      slot(name="modalHeader")
+      i.fal.fa-times(@click="closeBaseModal")
+    .baseModal-body
+      slot(name="modalBody")
+    .baseModal-footer(v-if="$slots.modalFooter")
+      slot(name="modalFooter")

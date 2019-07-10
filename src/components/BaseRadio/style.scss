@@ -1,0 +1,56 @@
+// checkbox 元件
+%checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: #e6e6e6;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    display: none;
+    width: 6px;
+    height: 10px;
+    transform: rotate(45deg);
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+  }
+  &.active {
+    &:before {
+      background: $primary;
+    }
+    &:after {
+      display: block;
+    }
+  }
+}
+
+// radio 元件
+.baseRadio-radio {
+  display: none;
+}
+.baseRadio-icon {
+  @include size(14px);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.3em;
+  border: 1px solid $line-dark;
+  border-radius: 50%;
+}
+.baseRadio-radio:checked ~ .baseRadio-icon {
+  border: solid 4px $primary;
+}

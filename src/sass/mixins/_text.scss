@@ -1,0 +1,15 @@
+@function h($index) {
+  @if $index < 1 {
+    $index: 1;
+  }
+
+  @if $index > length($headings-size) {
+    $index: length($headings-size);
+  }
+
+  @return nth($headings-size, $index);
+}
+
+@function text-small() {
+  @return 12px;
+}

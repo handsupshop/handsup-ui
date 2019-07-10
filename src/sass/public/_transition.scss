@@ -1,0 +1,24 @@
+// 淡入淡出
+.fade-enter,.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,.fade-leave {
+  opacity: 1;
+}
+
+.fade-enter-active,.fade-leave-active {
+  transition: opacity .2s;
+}
+
+//  滑入滑出
+.slide-fade-enter-active {
+  transition: all .8s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0s cubic-bezier(1, .5, .8, 1);
+}
+.slide-fade-enter,.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}

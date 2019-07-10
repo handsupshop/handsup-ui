@@ -1,0 +1,84 @@
+html,
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+html {
+  // font-size: 14px; // element 採用 14px
+  font-size: 16px; // 首頁採用 16px
+}
+
+body {
+  font-size: 0.875em;
+  // font-size: 1rem;
+  font-family: 'Microsoft JhengHei', '微軟正黑體', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  overflow-x: hidden;
+  touch-action: manipulation;
+  background-color: $bg-light;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+// 字體大小
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0.5rem;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i} {
+    font-size: nth($headings-size, $i);
+  }
+}
+
+textarea::placeholder,
+input::placeholder {
+  color: $vr-light;
+}
+
+// root colors
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+    // --#{$name}-dark: darken(#{$color}, 10%);
+    // --#{$name}-light: lighten(#{$color}, 30%);
+    // --#{$name}-vr-light: lighten(#{$color}, 40%);
+  }
+}

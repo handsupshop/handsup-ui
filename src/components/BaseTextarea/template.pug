@@ -1,0 +1,6 @@
+textarea.px-3.bg-white.border.outline-none.rounded.appearance-none.leading-normal(
+  :class="[exportDisplay, exportClass, exportSize]"
+  class="disabled:cursor-not-allowed"
+  v-model.trim="message"
+  :disabled="exportDisabled"
+)
