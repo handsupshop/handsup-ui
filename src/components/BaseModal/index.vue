@@ -16,7 +16,7 @@ export default {
       type: Boolean,
       default: true
     },
-    // 跳窗寬度
+    // 跳窗寬度 (sm/md/lg)
     size: {
       type: String,
       default: 'md'
