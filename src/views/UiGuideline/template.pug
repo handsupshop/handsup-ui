@@ -52,8 +52,8 @@
         p gray-200
         small #line-vr-light
       .mr-8.w-20
-        .h-20.bg-gray-200
-        p gray-200
+        .h-20.bg-gray-300
+        p gray-300
         small #bg-dark
       .mr-8.w-20
         .h-20.bg-gray-400
@@ -231,6 +231,59 @@
 
     //- .my-8
     h4.my-8 Modal
-    //- BaseModal()
+    BaseButton(color="primary" @click="SampleDialogVisibleSM = true") size=sm
+    BaseButton(color="primary" @click="SampleDialogVisibleMD = true") size=md (預設)
+    BaseButton(color="primary" @click="SampleDialogVisibleLG = true") size=lg
+    BaseButton(color="primary" @click="SampleDialogVisibleClear = true") 無標頭標尾
+    BaseButton(color="primary" @click="SampleDialogVisibleLong = true") 長文章
+    BaseModal(
+      size="sm"
+      v-if="SampleDialogVisibleSM"
+      :dialogVisible.sync="SampleDialogVisibleSM"
+    )
       template(v-slot:modalHeader) 標題
-      template(v-slot:modalBody) body
+      template(v-slot:modalBody) body ( 我是小跳窗 )
+      template(v-slot:modalFooter)
+        BaseButton(outline @click="SampleDialogVisibleSM = false") 取消
+        BaseButton(color="primary" @click="SampleDialogVisibleSM = false") 確認
+
+    BaseModal(
+      size="md"
+      v-if="SampleDialogVisibleMD"
+      :dialogVisible.sync="SampleDialogVisibleMD"
+    )
+      template(v-slot:modalHeader) 標題
+      template(v-slot:modalBody) body ( 我是中跳窗 ) ( 預設 )
+      template(v-slot:modalFooter)
+        BaseButton(outline @click="SampleDialogVisibleMD = false") 取消
+        BaseButton(color="primary" @click="SampleDialogVisibleMD = false") 確認
+
+    BaseModal(
+      size="lg"
+      v-if="SampleDialogVisibleLG"
+      :dialogVisible.sync="SampleDialogVisibleLG"
+    )
+      template(v-slot:modalHeader) 標題
+      template(v-slot:modalBody) body ( 我是寬跳窗 )
+      template(v-slot:modalFooter)
+        BaseButton(outline @click="SampleDialogVisibleLG = false") 取消
+        BaseButton(color="primary" @click="SampleDialogVisibleLG = false") 確認
+
+    BaseModal(
+      v-if="SampleDialogVisibleClear"
+      :dialogVisible.sync="SampleDialogVisibleClear"
+    )
+      template(v-slot:modalBody)
+        .h-64 body ( 無標頭標尾 )
+
+    BaseModal(
+      v-if="SampleDialogVisibleLong"
+      :dialogVisible.sync="SampleDialogVisibleLong"
+    )
+      template(v-slot:modalHeader) 標題
+      template(v-slot:modalBody)
+       div
+       | ( 我是長文章 ) 長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章
+      template(v-slot:modalFooter)
+        BaseButton(outline @click="SampleDialogVisibleLong = false") 取消
+        BaseButton(color="primary" @click="SampleDialogVisibleLong = false") 確認

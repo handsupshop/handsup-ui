@@ -30,9 +30,12 @@ export default {
         { label: 222, value: 'BBB' },
         { label: 333, value: 'CCC' },
         { label: 444, value: 'DDD' }
-      ]
-      // gender: '男'
-      // radioValue: '111'
+      ],
+      SampleDialogVisibleSM: false,
+      SampleDialogVisibleMD: false,
+      SampleDialogVisibleLG: false,
+      SampleDialogVisibleClear: false,
+      SampleDialogVisibleLong: false
     }
   },
   methods: {
@@ -45,6 +48,11 @@ export default {
     },
     changeCheckbox (e) {
     }
+    // sampleModal () {
+    //   this.$refs.toggle(true)
+    //   // this.deleteShippingItem = item
+    //   // this.$refs.confirmDelete.toggle(true)
+    // }
   }
 }
 </script>

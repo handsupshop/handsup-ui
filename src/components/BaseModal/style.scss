@@ -1,3 +1,32 @@
-.baseModal{
-
+.baseModal {
+  &-sm {
+    // width: 465px;
+    width: 380px;
+  }
+  &-md {
+    width: 630px;
+  }
+  &-lg {
+    width: 880px;
+  }
+  &-body {
+    max-height: calc(100vh - 10rem);
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      @apply bg-transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-600;
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &-footer {
+    button {
+      @apply ml-2 mr-0;
+      min-width: 6em;
+    }
+  }
 }

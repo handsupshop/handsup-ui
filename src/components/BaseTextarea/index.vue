@@ -16,8 +16,9 @@ export default {
       type: Boolean,
       default: false
     },
+    // 輸入的文字
     message: {
-      type: Array,
+      type: String,
       default: null
     }
   },
