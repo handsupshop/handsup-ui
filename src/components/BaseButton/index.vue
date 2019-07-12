@@ -107,14 +107,8 @@ export default {
       if (this.block) return ['block', 'w-full']
       return ['inline-block', 'my-1', 'mr-1']
     }
-  },
-  methods: {
-    handleClick (evt) {
-      this.$emit('click', evt)
-    }
   }
 }
 </script>
 
 <template lang="pug" src="./template.pug"></template>
-<style lang="scss" src="./style.scss" scoped></style>

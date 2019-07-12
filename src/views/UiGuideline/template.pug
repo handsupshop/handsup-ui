@@ -216,8 +216,8 @@
       .py-4(class="w-2/5")
         h5.my-1 radio
         label.mr-4 性別
-        BaseRadio(name="gender" label="男" value="male" @change="changeGender")
-        BaseRadio(name="gender" label="女" value="femal" @change="changeGender")
+        BaseRadio(name="gender" label="男" value="male" @mouseenter="testHover")
+        BaseRadio(name="gender" label="女" value="female" @change="changeGender")
         BaseRadio(name="gender" label="無 (disabled)" value="none" @change="changeGender" disabled)
         h5.mt-4.mb-1 radio block
         BaseRadio(name="options" label="111" value="aaa" @change="changeValue" block)
@@ -251,7 +251,12 @@
     BaseButton(color="primary" @click="SampleDialogVisibleLG = true") size=lg
     BaseButton(color="primary" @click="SampleDialogVisibleClear = true") 無標頭標尾
     BaseButton(color="primary" @click="SampleDialogVisibleLong = true") 長文章
-    BaseModal(
+    br
+    BaseButton(@click="SampleDialogVisibleMask = true") 無遮罩
+    BaseButton(@click="SampleDialogVisibleModal = true") 不可點Ｍodal關閉
+    BaseButton(@click="SampleDialogVisibleClose = true") 無叉叉
+
+    BaseDialog(
       size="sm"
       v-if="SampleDialogVisibleSM"
       :dialogVisible.sync="SampleDialogVisibleSM"
@@ -262,7 +267,7 @@
         BaseButton(outline @click="SampleDialogVisibleSM = false") 取消
         BaseButton(color="primary" @click="SampleDialogVisibleSM = false") 確認
 
-    BaseModal(
+    BaseDialog(
       size="md"
       v-if="SampleDialogVisibleMD"
       :dialogVisible.sync="SampleDialogVisibleMD"
@@ -273,7 +278,7 @@
         BaseButton(outline @click="SampleDialogVisibleMD = false") 取消
         BaseButton(color="primary" @click="SampleDialogVisibleMD = false") 確認
 
-    BaseModal(
+    BaseDialog(
       size="lg"
       v-if="SampleDialogVisibleLG"
       :dialogVisible.sync="SampleDialogVisibleLG"
@@ -284,21 +289,58 @@
         BaseButton(outline @click="SampleDialogVisibleLG = false") 取消
         BaseButton(color="primary" @click="SampleDialogVisibleLG = false") 確認
 
-    BaseModal(
+    BaseDialog(
       v-if="SampleDialogVisibleClear"
       :dialogVisible.sync="SampleDialogVisibleClear"
     )
       template(v-slot:modalBody)
         .h-64 body ( 無標頭標尾 )
 
-    BaseModal(
+    BaseDialog(
       v-if="SampleDialogVisibleLong"
       :dialogVisible.sync="SampleDialogVisibleLong"
     )
       template(v-slot:modalHeader) 標題
       template(v-slot:modalBody)
        div
-       | ( 我是長文章 ) 長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章長文章
+         p ( 我是長文章 )
+         .w-4.h-screen.my-4.ml-10.flex.items-center.border-dashed.border-l.border-gray-900
+          span.inline-block.bg-white.-ml-2.py-4 我假裝我很長
+         p ...好我結尾了
       template(v-slot:modalFooter)
         BaseButton(outline @click="SampleDialogVisibleLong = false") 取消
         BaseButton(color="primary" @click="SampleDialogVisibleLong = false") 確認
+
+
+    BaseDialog(
+      :mask="false"
+      v-if="SampleDialogVisibleMask"
+      :dialogVisible.sync="SampleDialogVisibleMask"
+    )
+      template(v-slot:modalHeader) 標題
+      template(v-slot:modalBody) body ( 無遮罩 )
+      template(v-slot:modalFooter)
+        BaseButton(outline @click="SampleDialogVisibleMask = false") 取消
+        BaseButton(color="primary" @click="SampleDialogVisibleMask = false") 確認
+
+    BaseDialog(
+      :closeOnClickModal="false"
+      v-if="SampleDialogVisibleModal"
+      :dialogVisible.sync="SampleDialogVisibleModal"
+    )
+      template(v-slot:modalHeader) 標題
+      template(v-slot:modalBody) body ( 不可點Ｍodal關閉 )
+      template(v-slot:modalFooter)
+        BaseButton(outline @click="SampleDialogVisibleModal = false") 取消
+        BaseButton(color="primary" @click="SampleDialogVisibleModal = false") 確認
+
+    BaseDialog(
+      :showClose="false"
+      v-if="SampleDialogVisibleClose"
+      :dialogVisible.sync="SampleDialogVisibleClose"
+    )
+      template(v-slot:modalHeader) 標題
+      template(v-slot:modalBody) body ( 無叉叉 )
+      template(v-slot:modalFooter)
+        BaseButton(outline @click="SampleDialogVisibleClose = false") 取消
+        BaseButton(color="primary" @click="SampleDialogVisibleClose = false") 確認

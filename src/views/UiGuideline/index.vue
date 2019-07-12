@@ -6,7 +6,7 @@ import BaseSelect from '@/components/BaseSelect/index.vue'
 import BaseTextarea from '@/components/BaseTextarea/index.vue'
 import BaseRadio from '@/components/BaseRadio/index.vue'
 import BaseCheckbox from '@/components/BaseCheckbox/index.vue'
-import BaseModal from '@/components/BaseModal/index.vue'
+import BaseDialog from '@/components/BaseDialog/index.vue'
 
 export default {
   skipMiddleware: ['getAuth', 'checkAuth'],
@@ -18,7 +18,7 @@ export default {
     BaseTextarea,
     BaseRadio,
     BaseCheckbox,
-    BaseModal
+    BaseDialog
   },
   data () {
     return {
@@ -35,7 +35,10 @@ export default {
       SampleDialogVisibleMD: false,
       SampleDialogVisibleLG: false,
       SampleDialogVisibleClear: false,
-      SampleDialogVisibleLong: false
+      SampleDialogVisibleLong: false,
+      SampleDialogVisibleMask: false,
+      SampleDialogVisibleModal: false,
+      SampleDialogVisibleClose: false
     }
   },
   methods: {
@@ -47,12 +50,18 @@ export default {
     changeValue (e) {
     },
     changeCheckbox (e) {
-    }
+    },
     // sampleModal () {
     //   this.$refs.toggle(true)
     //   // this.deleteShippingItem = item
     //   // this.$refs.confirmDelete.toggle(true)
     // }
+    testClick (e) {
+      console.log('click')
+    },
+    testHover () {
+      console.log('hover')
+    }
   }
 }
 </script>

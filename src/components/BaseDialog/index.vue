@@ -22,7 +22,7 @@ export default {
       default: 'md'
     }
   },
-  name: 'baseModal',
+  name: 'baseDialog',
   components: {},
   data () {
     return {
@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     exportSize () {
-      return `baseModal-${this.size}`
+      return `baseDialog-${this.size}`
     }
   },
   methods: {

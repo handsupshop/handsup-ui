@@ -1,4 +1,6 @@
-.baseModal {
+/* purgecss start ignore */
+
+.baseDialog {
   &-sm {
     // width: 465px;
     width: 380px;
@@ -30,3 +32,5 @@
     }
   }
 }
+
+/* purgecss end ignore */

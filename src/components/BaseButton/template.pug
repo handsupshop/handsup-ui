@@ -1,6 +1,6 @@
 button.align-center.rounded.border(
-  @click="handleClick"
   :class="[exportDisplay, exportClass, exportSize]"
   class="focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-  )
+  v-on="$listeners"
+)
   slot

@@ -5,6 +5,7 @@ label.baseRadio(:class="[exportDisplay, exportDisabled]")
     :name="name"
     :value="value"
     :disabled="disabled"
+    v-on="$listeners"
     v-model="picked")
   i.baseRadio-icon
   span {{ label }}

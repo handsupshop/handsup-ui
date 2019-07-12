@@ -4,6 +4,7 @@ label.baseCheckbox(:class="[exportDisplay, exportDisabled]")
     :name="name"
     :value="value"
     :disabled="disabled"
+    v-on="$listeners"
     v-model="picked")
   i.baseCheckbox-icon
   span {{ label }}

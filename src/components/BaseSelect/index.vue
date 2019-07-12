@@ -58,11 +58,6 @@ export default {
       if (this.disabled) return 'disabled'
       return false
     }
-  },
-  methods: {
-    handleChange (evt) {
-      this.$emit('change', evt)
-    }
   }
 }
 </script>
