@@ -1,24 +1,11 @@
 <script>
-// Base Component
-import BaseButton from '@/components/BaseButton/index.vue'
-import BaseInput from '@/components/BaseInput/index.vue'
-import BaseSelect from '@/components/BaseSelect/index.vue'
-import BaseTextarea from '@/components/BaseTextarea/index.vue'
-import BaseRadio from '@/components/BaseRadio/index.vue'
-import BaseCheckbox from '@/components/BaseCheckbox/index.vue'
-import BaseDialog from '@/components/BaseDialog/index.vue'
+import DialogSm from './DialogSm/index.vue'
 
 export default {
   skipMiddleware: ['getAuth', 'checkAuth'],
   name: 'uiGuideline',
   components: {
-    BaseButton,
-    BaseInput,
-    BaseSelect,
-    BaseTextarea,
-    BaseRadio,
-    BaseCheckbox,
-    BaseDialog
+    DialogSm
   },
   data () {
     return {
@@ -42,7 +29,7 @@ export default {
     }
   },
   methods: {
-    hadleSelectChange (e) {
+    handleSelectChange (e) {
       console.log(e)
     },
     changeGender (e) {

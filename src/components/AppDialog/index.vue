@@ -1,6 +1,11 @@
 <script>
 export default {
   props: {
+    // 標題
+    title: {
+      type: String,
+      default: ''
+    },
     // 是否需要遮罩
     mask: {
       type: Boolean,
@@ -20,9 +25,13 @@ export default {
     size: {
       type: String,
       default: 'md'
+    },
+    dialogVisible: {
+      type: Boolean,
+      default: true
     }
   },
-  name: 'baseDialog',
+  name: 'appDialog',
   components: {},
   data () {
     return {
@@ -30,7 +39,7 @@ export default {
   },
   computed: {
     exportSize () {
-      return `baseDialog-${this.size}`
+      return `appDialog-${this.size}`
     }
   },
   methods: {
@@ -38,7 +47,7 @@ export default {
       if (this.closeOnClickModal) this.handleClose()
     },
     handleClose () {
-      this.$emit('update:dialogVisible', false)
+      this.$emit('dialogVisible', false)
     }
   }
 }

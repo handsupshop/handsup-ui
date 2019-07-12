@@ -1,0 +1,9 @@
+AppDialog(
+  size="sm"
+  title="標題-我是小跳窗"
+  @dialogVisible="$emit('update:SampleDialogVisibleSM', false)"
+  )
+  template body ( 我是小跳窗 )
+  template(v-slot:footer)
+    BaseButton(outline @click="$emit('update:SampleDialogVisibleSM', false)") 取消
+    BaseButton(color="primary" @click="$emit('update:SampleDialogVisibleSM', false)") 確認
