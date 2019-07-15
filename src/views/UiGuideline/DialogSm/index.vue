@@ -1,7 +1,6 @@
 <script>
-// import { watch } from 'fs';
-
 export default {
+  inheritAttrs: false,
   props: {
     SampleDialogVisibleSM: {
       type: Boolean,

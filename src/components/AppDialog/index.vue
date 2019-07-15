@@ -47,7 +47,7 @@ export default {
       if (this.closeOnClickModal) this.handleClose()
     },
     handleClose () {
-      this.$emit('dialogVisible', false)
+      this.$emit('update:dialogVisible', false)
     }
   }
 }
