@@ -1,0 +1,10 @@
+AppDialog(
+  title="標題"
+  :mask="false"
+  v-bind="$attrs"
+  v-on="$listeners"
+)
+  template body ( 無遮罩 )
+  template(v-slot:footer)
+    BaseButton(outline @click="$emit('update:dialogVisible', false)") 取消
+    BaseButton(color="primary" @click="$emit('update:dialogVisible', false)") 確認

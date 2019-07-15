@@ -1,0 +1,13 @@
+AppDialog(
+  title="標題"
+  v-bind="$attrs"
+  v-on="$listeners"
+  )
+  div
+    p ( 我是長文章 )
+    .w-4.h-screen.my-4.ml-10.flex.items-center.border-dashed.border-l.border-gray-900
+      .bg-white.w-6.-ml-2.py-4 我假裝我很長
+    p ...好我結尾了
+  template(v-slot:footer)
+    BaseButton(outline @click="$emit('update:dialogVisible', false)") 取消
+    BaseButton(color="primary" @click="$emit('update:dialogVisible', false)") 確認

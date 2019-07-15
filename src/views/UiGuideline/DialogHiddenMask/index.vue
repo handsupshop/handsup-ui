@@ -1,14 +1,11 @@
 <script>
 export default {
   inheritAttrs: false,
-  name: 'dialogSm',
-  components: {
-  },
+  name: 'dialogHiddenMask',
+  components: {},
   data () {
     return {
     }
-  },
-  methods: {
   }
 }
 </script>

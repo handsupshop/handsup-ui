@@ -1,11 +1,25 @@
 <script>
 import DialogSm from './DialogSm/index.vue'
+import DialogMd from './DialogMd/index.vue'
+import DialogLg from './DialogLg/index.vue'
+import DialogClear from './DialogClear/index.vue'
+import DialogLong from './DialogLong/index.vue'
+import DialogHiddenMask from './DialogHiddenMask/index.vue'
+import DialogNotAllowClickModal from './DialogNotAllowClickModal/index.vue'
+import DialogHiddenClose from './DialogHiddenClose/index.vue'
 
 export default {
   skipMiddleware: ['getAuth', 'checkAuth'],
   name: 'uiGuideline',
   components: {
-    DialogSm
+    DialogSm,
+    DialogMd,
+    DialogLg,
+    DialogClear,
+    DialogLong,
+    DialogHiddenMask,
+    DialogNotAllowClickModal,
+    DialogHiddenClose
   },
   data () {
     return {

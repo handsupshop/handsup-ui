@@ -1,14 +1,11 @@
 <script>
 export default {
-  inheritAttrs: false,
-  name: 'dialogSm',
-  components: {
-  },
+  name: 'dialogClear',
+  components: {},
   data () {
     return {
+      title: 'Vue - Project'
     }
-  },
-  methods: {
   }
 }
 </script>

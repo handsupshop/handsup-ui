@@ -1,0 +1,10 @@
+AppDialog(
+  size="lg"
+  title="標題"
+  v-bind="$attrs"
+  v-on="$listeners"
+  )
+  template body ( 我是寬跳窗 )
+  template(v-slot:footer)
+    BaseButton(outline @click="$emit('update:dialogVisible', false)") 取消
+    BaseButton(color="primary" @click="$emit('update:dialogVisible', false)") 確認

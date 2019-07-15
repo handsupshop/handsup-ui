@@ -1,14 +1,11 @@
 <script>
 export default {
   inheritAttrs: false,
-  name: 'dialogSm',
-  components: {
-  },
+  name: 'dialogLg',
+  components: {},
   data () {
     return {
     }
-  },
-  methods: {
   }
 }
 </script>

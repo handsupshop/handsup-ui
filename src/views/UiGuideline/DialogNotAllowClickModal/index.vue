@@ -1,14 +1,11 @@
 <script>
 export default {
   inheritAttrs: false,
-  name: 'dialogSm',
-  components: {
-  },
+  name: 'dialogNotAllowClickModal',
+  components: {},
   data () {
     return {
     }
-  },
-  methods: {
   }
 }
 </script>
