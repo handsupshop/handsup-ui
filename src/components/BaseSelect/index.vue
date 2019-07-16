@@ -47,7 +47,7 @@ export default {
           'disabled:text-gray-700']
       } else {
         return [
-          `text-${this.color}`,
+          // `text-${this.color}`,
           `border-${this.color}`,
           'disabled:bg-gray-200',
           'disabled:opacity-50']

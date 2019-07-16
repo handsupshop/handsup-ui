@@ -244,9 +244,13 @@
           baseSelect(:options="selectOptions" @change="handleSelectChange" inline)
           baseButton(color="primary") send
 
-        //- h5.my-1 input number 計數器
-        //- .my-6
-
+        h5.mt-8 input number 計數器
+        .my-6
+          p 右版本
+          BaseInputNumber.w-48(controlsPosition="right" value="500000000000000000000000" inline)
+        .my-6
+          p 預設
+          BaseInputNumber.w-48(value="5" inline)
 
     .my-8.flex
       .py-4(class="w-2/5")
@@ -277,6 +281,12 @@
 
           .float-right
             baseButton.mt-2(block @click="toggleError") 切換提示
+
+      .py-4.ml-16(class="w-2/5")
+        h5.my-1 icon 式 input
+        .my-6
+          BaseInput(iconClass="fal fa-search")
+          BaseInput.mt-2(iconClass="fal fa-search" iconPosition="right")
 
 
     hr.my-16.border-b

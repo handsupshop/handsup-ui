@@ -60,8 +60,8 @@ export default {
               'text-black',
               'bg-white',
               'border-gray-600',
-              'hover:text-white',
-              'hover:bg-primary',
+              // 'hover:text-white',
+              // 'hover:bg-primary',
               'hover:border-primary'
             ]
           } else {

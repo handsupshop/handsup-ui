@@ -20,6 +20,14 @@ export default {
     errorMessage: {
       type: String,
       default: '填寫錯誤'
+    },
+    iconClass: {
+      type: String,
+      default: ''
+    },
+    iconPosition: {
+      type: String,
+      default: 'left'
     }
   },
   name: 'baseInput',
@@ -40,7 +48,7 @@ export default {
           'disabled:text-gray-700']
       } else {
         return [
-          `text-${this.color}`,
+          // `text-${this.color}`,
           `border-${this.color}`,
           'disabled:bg-gray-200',
           'disabled:opacity-50']
@@ -58,6 +66,14 @@ export default {
     exportError () {
       if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
       return {}
+    },
+    exportIcon () {
+      if (this.iconPosition === 'right') return 'right-0'
+      return 'left-0'
+    },
+    exportPadding () {
+      if (this.iconPosition === 'right') return 'pl-3 pr-10'
+      return 'pl-10 pr-3'
     }
   }
 }

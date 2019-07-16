@@ -1,5 +1,6 @@
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     color: {
       type: String,
@@ -12,10 +13,6 @@ export default {
     inline: {
       type: Boolean
     },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     error: {
       type: Boolean,
       default: false
@@ -24,18 +21,21 @@ export default {
       type: String,
       default: '填寫錯誤'
     },
-    // 輸入的文字
-    message: {
+    controlsPosition: {
       type: String,
-      default: null
+      default: 'between'
     }
+
   },
-  name: 'baseTextarea',
+  name: 'baseInputNumber',
   components: {},
   data () {
     return {
     }
   },
+  // watch: {
+  //   value: {}
+  // },
   computed: {
     exportClass () {
       if (this.color === 'basic') {
@@ -56,20 +56,20 @@ export default {
     },
     exportSize () {
       if (this.size === 'sm') return ['py-1', 'text-xs']
-      if (this.size === 'lg') return ['p-3', 'text-base']
+      if (this.size === 'lg') return ['py-3', 'text-base']
       return ['py-2', 'text-sm']
     },
     exportDisplay () {
-      if (this.inline) return ['inline-block', 'align-top', 'my-1', 'mr-1']
+      if (this.inline) return ['inline-block', 'my-1', 'mr-1']
       return ['block', 'w-full']
-    },
-    exportDisabled () {
-      if (this.disabled) return 'disabled'
-      return false
     },
     exportError () {
       if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
       return {}
+    },
+    exportControlsPosition () {
+      if (this.controlsPosition === 'right') return 'baseInputNumber-right'
+      return 'baseInputNumber-between'
     }
   }
 }

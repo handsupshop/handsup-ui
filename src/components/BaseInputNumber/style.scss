@@ -1,0 +1,62 @@
+/* purgecss start ignore */
+
+.baseInputNumber {
+  &-right {
+    input {
+      padding-left: 0.75rem;
+      padding-right: 3.5rem;
+    }
+    .baseInputNumber-iconWrap {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: 1px;
+      display: flex;
+      flex-direction: column;
+      width: 3rem;
+      border-left-width: 1px;
+      button {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 0;
+        cursor: pointer;
+        &:focus {
+          outline: 0;
+        }
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  &-between {
+    input {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+    }
+    button {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: 1px;
+      width: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:focus {
+        outline: 0;
+      }
+    }
+    .baseInputNumber-minus {
+      left: 0;
+    }
+    .baseInputNumber-plus {
+      right: 0;
+    }
+  }
+}
+
+/* purgecss end ignore */

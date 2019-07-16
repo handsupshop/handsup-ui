@@ -1,8 +1,9 @@
 .relative(:class="[exportDisplay]")
-  input.block.w-full.px-3.bg-white.outline-none.border.rounded.appearance-none.leading-normal(
-    :class="[exportClass, exportSize, exportError]"
+  input.block.w-full.truncate.text-black.bg-white.outline-none.border.rounded.appearance-none.leading-normal(
+    :class="[exportClass, exportSize, exportPadding, exportError, exportControlsPosition]"
     class="disabled:cursor-not-allowed"
     v-bind="$attrs"
     v-on="$listeners"
   )
+  i.absolute.inset-y-0.flex.items-center.justify-center.w-10(v-if="iconClass" :class="[iconClass, exportIcon]")
   .absolute.mt-1.ml-px.text-xs.text-danger(v-if="error") {{ errorMessage }}

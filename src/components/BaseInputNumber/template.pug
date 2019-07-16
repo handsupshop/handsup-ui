@@ -1,0 +1,31 @@
+.baseInputNumber.relative(:class="[exportDisplay, exportControlsPosition]")
+  input.block.w-full.truncate.text-center.text-black.bg-white.outline-none.border.rounded.appearance-none.leading-normal(
+    class="disabled:cursor-not-allowed"
+    :class="[exportClass, exportSize, exportError]"
+    type="tel"
+    v-bind="$attrs"
+    v-on="$listeners"
+    )
+  //- BaseInput(type="tel" v-bind="$attrs")
+  .baseInputNumber-iconWrap(
+    class="text-sm border-gray-600 rounded-r bg-gray-300"
+    v-if="controlsPosition === 'right'"
+    )
+    button.baseInputNumber-plus(
+      class="hover:text-primary disabled:text-gray-700"
+      disabled
+      )
+      .fal.fa-angle-up
+    button.baseInputNumber-minus(
+      class="border-t border-gray-600 hover:text-primary disabled:text-gray-700"
+      )
+      .fal.fa-angle-down
+
+  button.baseInputNumber-minus(
+    class="fal fa-minus bg-gray-300 border-gray-600 border-r rounded-l hover:text-primary disabled:text-gray-700"
+    v-if="controlsPosition === 'between'"
+    )
+  button.baseInputNumber-plus(
+    class="fal fa-plus bg-gray-300 border-gray-600 border-l rounded-r hover:text-primary disabled:text-gray-700"
+    v-if="controlsPosition === 'between'"
+    )
