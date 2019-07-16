@@ -32,6 +32,16 @@ export default {
         { label: 333, value: 'CCC' },
         { label: 444, value: 'DDD' }
       ],
+      radioOptions: [
+        { label: '男', value: 'male' },
+        { label: '女', value: 'female' },
+        { label: '不明', value: 'unknow', disabled: true }
+      ],
+      checkboxOptions: [
+        { label: '男', value: 'male' },
+        { label: '女', value: 'female' },
+        { label: '不明', value: 'unknow', disabled: true }
+      ],
       SampleDialogVisibleSM: false,
       SampleDialogVisibleMD: false,
       SampleDialogVisibleLG: false,
@@ -39,7 +49,8 @@ export default {
       SampleDialogVisibleLong: false,
       SampleDialogVisibleMask: false,
       SampleDialogVisibleModal: false,
-      SampleDialogVisibleClose: false
+      SampleDialogVisibleClose: false,
+      alertError: false
     }
   },
   methods: {
@@ -62,6 +73,9 @@ export default {
     },
     testHover () {
       console.log('hover')
+    },
+    toggleError () {
+      this.alertError = !this.alertError
     }
   }
 }

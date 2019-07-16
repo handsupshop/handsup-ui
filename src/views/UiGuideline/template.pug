@@ -151,6 +151,7 @@
         .my-6
           p.mb-1 預設input
           baseInput(value="預設input")
+
         .my-6
           p.mb-1 primary
           baseInput(color="primary" value="primary")
@@ -164,11 +165,12 @@
           p.mb-1 danger
           baseInput(color="danger" value="danger")
 
+
       .py-4.ml-16(class="w-2/5")
         h5.my-1.mr-8 disabled
         .my-6
           p.mb-1 select
-          baseSelect(:options="selectOptionTemp" disabled)
+          baseSelect(::options="selectOptionTemp" disabled)
         .my-6
           p.mb-1 預設input
           baseInput(value="預設input" disabled)
@@ -216,7 +218,7 @@
       .py-4(class="w-2/5")
         h5.my-1 radio
         label.mr-4 性別
-        BaseRadio(name="gender" label="男" value="male" @mouseenter="testHover")
+        BaseRadio(name="gender" label="男" value="male" @change="changeGender")
         BaseRadio(name="gender" label="女" value="female" @change="changeGender")
         BaseRadio(name="gender" label="無 (disabled)" value="none" @change="changeGender" disabled)
         h5.mt-4.mb-1 radio block
@@ -241,6 +243,41 @@
           baseInput(value="last name" inline)
           baseSelect(:options="selectOptions" @change="handleSelectChange" inline)
           baseButton(color="primary") send
+
+        //- h5.my-1 input number 計數器
+        //- .my-6
+
+
+    .my-8.flex
+      .py-4(class="w-2/5")
+        h5.my-1 錯誤提示
+        .my-6.overflow-hidden
+          baseInput(value="錯誤提示input" errorMessage="*此欄位為必填" :error.sync="alertError")
+          baseInput.mt-6(color="primary" value="primary input" :error.sync="alertError")
+          baseSelect.mt-6(
+            :options="selectOptionTemp"
+            errorMessage="*此欄位為必填"
+            :error.sync="alertError"
+            )
+          BaseTextarea.mt-6(message="錯誤提示" :error.sync="alertError")
+
+          BaseRadioGroup.mt-6(
+            name="gender2"
+            :options="radioOptions"
+            message="錯誤提示"
+            :error.sync="alertError"
+            )
+
+          BaseCheckboxGroup.mt-6(
+            name="gender3"
+            :options="checkboxOptions"
+            :error.sync="alertError"
+          )
+
+
+          .float-right
+            baseButton.mt-2(block @click="toggleError") 切換提示
+
 
     hr.my-16.border-b
 

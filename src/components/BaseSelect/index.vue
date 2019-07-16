@@ -16,6 +16,14 @@ export default {
       type: Boolean,
       default: false
     },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    errorMessage: {
+      type: String,
+      default: '填寫錯誤'
+    },
     options: {
       type: Array,
       default: () => []
@@ -57,6 +65,10 @@ export default {
     exportDisabled () {
       if (this.disabled) return 'disabled'
       return false
+    },
+    exportError () {
+      if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
+      return {}
     }
   }
 }

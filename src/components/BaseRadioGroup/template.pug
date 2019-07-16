@@ -1,0 +1,9 @@
+.relative
+  BaseRadio(
+    v-bind="$attrs"
+    v-for="item in options"
+    :label="item.label"
+    :value="item.value"
+    :disabled="item.disabled"
+    )
+  .absolute.mt-1.ml-px.text-xs.text-danger(v-if="error") {{ errorMessage }}

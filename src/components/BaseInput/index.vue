@@ -1,5 +1,6 @@
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     color: {
       type: String,
@@ -11,6 +12,14 @@ export default {
     },
     inline: {
       type: Boolean
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    errorMessage: {
+      type: String,
+      default: '填寫錯誤'
     }
   },
   name: 'baseInput',
@@ -45,6 +54,10 @@ export default {
     exportDisplay () {
       if (this.inline) return ['inline-block', 'my-1', 'mr-1']
       return ['block', 'w-full']
+    },
+    exportError () {
+      if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
+      return {}
     }
   }
 }

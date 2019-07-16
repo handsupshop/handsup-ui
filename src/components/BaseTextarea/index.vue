@@ -16,6 +16,14 @@ export default {
       type: Boolean,
       default: false
     },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    errorMessage: {
+      type: String,
+      default: '填寫錯誤'
+    },
     // 輸入的文字
     message: {
       type: String,
@@ -58,6 +66,10 @@ export default {
     exportDisabled () {
       if (this.disabled) return 'disabled'
       return false
+    },
+    exportError () {
+      if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
+      return {}
     }
   }
 }
