@@ -247,45 +247,47 @@
         h5.mt-8 input number 計數器
         .my-6
           p 右版本
-          BaseInputNumber.w-48(controlsPosition="right" value="500000000000000000000000" inline)
+          BaseInputNumber.w-48(v-model="inputNum" controlsPosition="right" inline)
         .my-6
           p 預設
-          BaseInputNumber.w-48(value="5" inline)
+          BaseInputNumber.w-48(v-model="inputNum2" inline)
+        .my-6
+          p 最小值/最大值
+          BaseInputNumber.w-48(v-model="inputNum3" min="0" max="10" inline)
+
 
     .my-8.flex
       .py-4(class="w-2/5")
         h5.my-1 錯誤提示
         .my-6.overflow-hidden
-          baseInput(value="錯誤提示input" errorMessage="*此欄位為必填" :error.sync="alertError")
-          baseInput.mt-6(color="primary" value="primary input" :error.sync="alertError")
+          baseInput(value="錯誤提示input" errorMessage="*此欄位為必填" :isError.sync="alertError")
+          baseInput.mt-6(color="primary" value="primary input" :isError.sync="alertError")
           baseSelect.mt-6(
             :options="selectOptionTemp"
+            :isError.sync="alertError"
             errorMessage="*此欄位為必填"
-            :error.sync="alertError"
             )
-          BaseTextarea.mt-6(message="錯誤提示" :error.sync="alertError")
+          BaseTextarea.mt-6(message="錯誤提示" :isError.sync="alertError")
 
           BaseRadioGroup.mt-6(
             name="gender2"
             :options="radioOptions"
+            :isError.sync="alertError"
             message="錯誤提示"
-            :error.sync="alertError"
             )
 
           BaseCheckboxGroup.mt-6(
             name="gender3"
+            :isError.sync="alertError"
             :options="checkboxOptions"
-            :error.sync="alertError"
-          )
-
-
+            )
           .float-right
             baseButton.mt-2(block @click="toggleError") 切換提示
 
       .py-4.ml-16(class="w-2/5")
         h5.my-1 icon 式 input
         .my-6
-          BaseInput(iconClass="fal fa-search")
+          BaseInput(iconClass="fal fa-calendar-alt")
           BaseInput.mt-2(iconClass="fal fa-search" iconPosition="right")
 
 

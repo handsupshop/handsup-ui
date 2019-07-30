@@ -16,7 +16,7 @@ export default {
       type: Boolean,
       default: false
     },
-    error: {
+    isError: {
       type: Boolean,
       default: false
     },
@@ -68,7 +68,7 @@ export default {
       return false
     },
     exportError () {
-      if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
+      if (this.isError) return 'text-black border-danger hover:border-danger focus:border-danger'
       return {}
     }
   }

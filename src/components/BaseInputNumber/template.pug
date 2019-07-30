@@ -5,6 +5,8 @@
     type="tel"
     v-bind="$attrs"
     v-on="$listeners"
+    :value="value"
+    :min="min"
     )
   //- BaseInput(type="tel" v-bind="$attrs")
   .baseInputNumber-iconWrap(
@@ -13,19 +15,22 @@
     )
     button.baseInputNumber-plus(
       class="hover:text-primary disabled:text-gray-700"
-      disabled
+      @click="increase"
       )
       .fal.fa-angle-up
     button.baseInputNumber-minus(
       class="border-t border-gray-600 hover:text-primary disabled:text-gray-700"
+      @click="decrease"
       )
       .fal.fa-angle-down
 
   button.baseInputNumber-minus(
     class="fal fa-minus bg-gray-300 border-gray-600 border-r rounded-l hover:text-primary disabled:text-gray-700"
     v-if="controlsPosition === 'between'"
+    @click="decrease"
     )
   button.baseInputNumber-plus(
     class="fal fa-plus bg-gray-300 border-gray-600 border-l rounded-r hover:text-primary disabled:text-gray-700"
     v-if="controlsPosition === 'between'"
+    @click="increase"
     )

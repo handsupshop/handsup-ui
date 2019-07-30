@@ -24,6 +24,17 @@ export default {
     controlsPosition: {
       type: String,
       default: 'between'
+    },
+    value: {
+      type: Number
+    },
+    min: {
+      type: Number,
+      default: 0
+    },
+    max: {
+      type: Number,
+      default: Infinity
     }
 
   },
@@ -33,9 +44,6 @@ export default {
     return {
     }
   },
-  // watch: {
-  //   value: {}
-  // },
   computed: {
     exportClass () {
       if (this.color === 'basic') {
@@ -70,6 +78,22 @@ export default {
     exportControlsPosition () {
       if (this.controlsPosition === 'right') return 'baseInputNumber-right'
       return 'baseInputNumber-between'
+    }
+  },
+  methods: {
+    increase () {
+      if (this.value < this.max) {
+        this.$emit('input', this.value + 1)
+      } else {
+        this.$emit('input', this.max)
+      }
+    },
+    decrease () {
+      if (this.value > this.min) {
+        this.$emit('input', this.value - 1)
+      } else {
+        this.$emit('input', this.min)
+      }
     }
   }
 }

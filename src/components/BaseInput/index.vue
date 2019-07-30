@@ -11,9 +11,10 @@ export default {
       default: 'md'
     },
     inline: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
-    error: {
+    isError: {
       type: Boolean,
       default: false
     },
@@ -22,7 +23,7 @@ export default {
       default: '填寫錯誤'
     },
     iconClass: {
-      type: String,
+      type: [String, Boolean],
       default: ''
     },
     iconPosition: {
@@ -64,16 +65,20 @@ export default {
       return ['block', 'w-full']
     },
     exportError () {
-      if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
-      return {}
+      if (this.isError) return 'text-black border-danger hover:border-danger focus:border-danger'
+      return ''
     },
     exportIcon () {
       if (this.iconPosition === 'right') return 'right-0'
       return 'left-0'
     },
     exportPadding () {
-      if (this.iconPosition === 'right') return 'pl-3 pr-10'
-      return 'pl-10 pr-3'
+      if (this.iconClass === '') {
+        return 'px-3'
+      } else {
+        if (this.iconPosition === 'right') return 'pl-3 pr-10'
+        return 'pl-10 pr-3'
+      }
     }
   }
 }

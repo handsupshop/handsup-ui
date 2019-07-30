@@ -6,7 +6,7 @@ export default {
       type: Array,
       default: () => []
     },
-    error: {
+    isError: {
       type: Boolean,
       default: false
     },

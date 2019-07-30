@@ -50,7 +50,10 @@ export default {
       SampleDialogVisibleMask: false,
       SampleDialogVisibleModal: false,
       SampleDialogVisibleClose: false,
-      alertError: false
+      alertError: false,
+      inputNum: 10,
+      inputNum2: 500000000000,
+      inputNum3: 5
     }
   },
   methods: {
