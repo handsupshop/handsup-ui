@@ -252,14 +252,23 @@
           p 預設
           BaseInputNumber.w-48(v-model="inputNum2" inline)
         .my-6
-          p 最小值/最大值
-          BaseInputNumber.w-48(v-model="inputNum3" min="0" max="10" inline)
+          p 最小值/最大值（預設最小值為0）
+          BaseInputNumber.w-48(v-model="inputNum3" :min="0" :max="10" inline)
+          BaseInputNumber.w-48(v-model="inputNum4" :min="0" :max="10" inline)
+        .my-6
+          p 尺寸：小/中/大 ( size="sm/md/lg" )
+          BaseInputNumber.w-40(v-model="inputNum" size="sm" inline)
+          BaseInputNumber.w-40(v-model="inputNum" size="md" inline)
+          BaseInputNumber.w-40(v-model="inputNum" size="lg" inline)
+        .my-6
+          p block
+          BaseInputNumber(v-model="inputNum")
 
 
     .my-8.flex
       .py-4(class="w-2/5")
         h5.my-1 錯誤提示
-        .my-6.overflow-hidden
+        .my-6.py-px
           baseInput(value="錯誤提示input" errorMessage="*此欄位為必填" :isError.sync="alertError")
           baseInput.mt-6(color="primary" value="primary input" :isError.sync="alertError")
           baseSelect.mt-6(
@@ -267,13 +276,22 @@
             :isError.sync="alertError"
             errorMessage="*此欄位為必填"
             )
-          BaseTextarea.mt-6(message="錯誤提示" :isError.sync="alertError")
+          BaseTextarea.mt-6(
+            message="test"
+            errorMessage="錯誤訊息"
+            :isError.sync="alertError")
+
+          BaseInputNumber.mt-6.w-48(
+            v-model="inputNum"
+            :isError.sync="alertError"
+            inline
+            )
 
           BaseRadioGroup.mt-6(
             name="gender2"
             :options="radioOptions"
             :isError.sync="alertError"
-            message="錯誤提示"
+            errorMessage="錯誤提示"
             )
 
           BaseCheckboxGroup.mt-6(
@@ -281,6 +299,7 @@
             :isError.sync="alertError"
             :options="checkboxOptions"
             )
+
           .float-right
             baseButton.mt-2(block @click="toggleError") 切換提示
 

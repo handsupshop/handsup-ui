@@ -13,7 +13,7 @@ export default {
     inline: {
       type: Boolean
     },
-    error: {
+    isError: {
       type: Boolean,
       default: false
     },
@@ -63,21 +63,34 @@ export default {
       }
     },
     exportSize () {
-      if (this.size === 'sm') return ['py-1', 'text-xs']
-      if (this.size === 'lg') return ['py-3', 'text-base']
-      return ['py-2', 'text-sm']
+      if (this.size === 'sm') return ['py-1']
+      if (this.size === 'lg') return ['py-3']
+      return ['py-2']
+    },
+    exportTxtSize () {
+      if (this.size === 'sm') return ['text-xs']
+      if (this.size === 'lg') return ['text-base']
+      return ['text-sm']
     },
     exportDisplay () {
       if (this.inline) return ['inline-block', 'my-1', 'mr-1']
       return ['block', 'w-full']
     },
     exportError () {
-      if (this.error) return 'text-black border-danger hover:border-danger focus:border-danger'
+      if (this.isError) return 'text-black border-danger hover:border-danger focus:border-danger'
       return {}
     },
     exportControlsPosition () {
       if (this.controlsPosition === 'right') return 'baseInputNumber-right'
       return 'baseInputNumber-between'
+    },
+    isMaxDisabled () {
+      if (this.value >= this.max) return true
+      return false
+    },
+    isMinDisabled () {
+      if (this.value <= this.min) return true
+      return false
     }
   },
   methods: {

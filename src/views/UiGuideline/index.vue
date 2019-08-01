@@ -53,7 +53,8 @@ export default {
       alertError: false,
       inputNum: 10,
       inputNum2: 500000000000,
-      inputNum3: 5
+      inputNum3: 5,
+      inputNum4: 0
     }
   },
   methods: {

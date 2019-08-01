@@ -1,4 +1,6 @@
-.baseInputNumber.relative(:class="[exportDisplay, exportControlsPosition]")
+.baseInputNumber.relative(
+  :class="[exportDisplay, exportControlsPosition, exportTxtSize]"
+  )
   input.block.w-full.truncate.text-center.text-black.bg-white.outline-none.border.rounded.appearance-none.leading-normal(
     class="disabled:cursor-not-allowed"
     :class="[exportClass, exportSize, exportError]"
@@ -7,6 +9,7 @@
     v-on="$listeners"
     :value="value"
     :min="min"
+    :max="max"
     )
   //- BaseInput(type="tel" v-bind="$attrs")
   .baseInputNumber-iconWrap(
@@ -14,23 +17,28 @@
     v-if="controlsPosition === 'right'"
     )
     button.baseInputNumber-plus(
-      class="hover:text-primary disabled:text-gray-700"
+      class="hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
       @click="increase"
+      :disabled="isMaxDisabled"
       )
       .fal.fa-angle-up
     button.baseInputNumber-minus(
-      class="border-t border-gray-600 hover:text-primary disabled:text-gray-700"
+      class="border-t border-gray-600 hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
       @click="decrease"
+      :disabled="isMinDisabled"
       )
       .fal.fa-angle-down
 
   button.baseInputNumber-minus(
-    class="fal fa-minus bg-gray-300 border-gray-600 border-r rounded-l hover:text-primary disabled:text-gray-700"
+    class="fal fa-minus bg-gray-300 border-gray-600 border-r rounded-l hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
     v-if="controlsPosition === 'between'"
     @click="decrease"
+    :disabled="isMinDisabled"
     )
   button.baseInputNumber-plus(
-    class="fal fa-plus bg-gray-300 border-gray-600 border-l rounded-r hover:text-primary disabled:text-gray-700"
+    class="fal fa-plus bg-gray-300 border-gray-600 border-l rounded-r hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
     v-if="controlsPosition === 'between'"
     @click="increase"
+    :disabled="isMaxDisabled"
     )
+  .absolute.mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}
