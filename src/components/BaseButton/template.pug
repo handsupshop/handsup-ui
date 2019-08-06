@@ -1,6 +1,11 @@
 button.align-center.rounded.border(
-  :class="[exportDisplay, exportClass, exportSize]"
-  class="focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+  :class="[exportDisplay, exportClass, exportSize, exportHover]"
+  class="focus:outline-none"
   v-on="$listeners"
+  :disabled="disabled || loading"
 )
+  .inline-block.pr-2(
+      v-if="loading"
+    )
+    i.far.fa-spinner.ani-rotation
   slot

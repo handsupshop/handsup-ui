@@ -1,0 +1,13 @@
+/* purgecss ignore */
+// loading 動畫
+.ani-rotation{
+  animation: fa-spin 2s linear infinite;
+}
+@keyframes fa-spin {
+  0% {
+      transform: rotate(0deg)
+  }
+  to {
+      transform: rotate(1turn)
+  }
+}
