@@ -1,0 +1,9 @@
+.message.fixed.flex.items-center.text-sm.px-3.py-2.border.rounded(
+  :class="[exportClass]"
+)
+  i.fas.pr-3(:class="exportIcon")
+  p 
+    slot 
+  i.btn-close.fal.fa-times.pl-3.cursor-pointer(
+    v-if="showClose"
+  )

@@ -364,3 +364,7 @@
       v-if="SampleDialogVisibleClose"
       :dialogVisible.sync="SampleDialogVisibleClose"
     )
+
+    h4.my-8 Message
+    BaseButton(@click="SampleMsg = true") 消息
+    Message(v-if="SampleMsg" color="success" showClose) 這是一條提示

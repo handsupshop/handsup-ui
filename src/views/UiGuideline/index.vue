@@ -50,6 +50,7 @@ export default {
       SampleDialogVisibleMask: false,
       SampleDialogVisibleModal: false,
       SampleDialogVisibleClose: false,
+      SampleMsg: false,
       alertError: false,
       inputNum: 10,
       inputNum2: 500000000000,
