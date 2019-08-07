@@ -54,8 +54,6 @@ export default {
               'border-gray-600'
             ]
           }
-          break
-
         // 純框線
         case true:
           if (this.color === 'basic') {
@@ -71,8 +69,6 @@ export default {
               `border-${this.color}`
             ]
           }
-          break
-
         // 純底色
         default:
           if (this.color !== 'basic') {
@@ -88,7 +84,7 @@ export default {
               'border-gray-400'
             ]
           }
-          break
+          // break
       }
     },
     exportSize () {
@@ -105,7 +101,7 @@ export default {
       if (this.disabled || this.loading) {
         // disabled 樣式
         arry.push('disabled:opacity-50', 'disabled:cursor-not-allowed')
-      }else{
+      } else {
         // 非 disabled 的才要加上 hover 樣式
         switch (this.outline) {
           // 有線＋底色
@@ -123,8 +119,7 @@ export default {
                 'hover:border-primary-light'
               )
             }
-          break
-
+            break
           // 純框線
           case true:
             if (this.color === 'basic') {
@@ -136,8 +131,7 @@ export default {
                 `hover:border-${this.color}`
               )
             }
-          break
-
+            break
           // 純底色
           default:
             if (this.color !== 'basic') {
@@ -153,8 +147,8 @@ export default {
                 'hover:border-primary'
               )
             }
-          break
-        }        
+            break
+        }
       }
       return arry
     }
