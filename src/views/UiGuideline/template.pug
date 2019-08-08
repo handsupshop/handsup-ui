@@ -100,36 +100,63 @@
 
     .my-4
       .my-1.mr-8 outline w/background
-      BaseButton(color="basic" outline="flat") basic (預設色)
-      BaseButton(color="primary" outline="flat") primary
-      BaseButton(color="success" outline="flat") success
-      BaseButton(color="warning" outline="flat") warning
-      BaseButton(color="danger" outline="flat") danger
+      BaseButton(color="basic" pattern="flat") basic (預設色)
+      BaseButton(color="primary" pattern="flat") primary
+      BaseButton(color="success" pattern="flat") success
+      BaseButton(color="warning" pattern="flat") warning
+      BaseButton(color="danger" pattern="flat") danger
 
       .my-1.mr-8 outline w/background disabled
-      BaseButton(color="basic" outline="flat" disabled) basic (預設色)
-      BaseButton(color="primary" outline="flat" disabled) primary
-      BaseButton(color="success" outline="flat" disabled) success
-      BaseButton(color="warning" outline="flat" disabled) warning
-      BaseButton(color="danger" outline="flat" disabled) danger
+      BaseButton(color="basic" pattern="flat" disabled) basic (預設色)
+      BaseButton(color="primary" pattern="flat" disabled) primary
+      BaseButton(color="success" pattern="flat" disabled) success
+      BaseButton(color="warning" pattern="flat" disabled) warning
+      BaseButton(color="danger" pattern="flat" disabled) danger
 
     .my-4
       .my-1.mr-8 outline
-      BaseButton(color="basic" outline) basic outline (預設色)
-      BaseButton(color="primary" outline) primary outline
-      BaseButton(color="success" outline) success outline
-      BaseButton(color="warning" outline) warning outline
-      BaseButton(color="danger" outline) danger outline
+      BaseButton(color="basic" pattern="outline") basic outline (預設色)
+      BaseButton(color="primary" pattern="outline") primary outline
+      BaseButton(color="success" pattern="outline") success outline
+      BaseButton(color="warning" pattern="outline") warning outline
+      BaseButton(color="danger" pattern="outline") danger outline
 
       .my-1.mr-8 outline disabled
-      BaseButton(color="basic" outline disabled) basic outline (預設色)
-      BaseButton(color="primary" outline disabled) primary outline
-      BaseButton(color="success" outline disabled) success outline
-      BaseButton(color="warning" outline disabled) warning outline
-      BaseButton(color="danger" outline disabled) danger outline
+      BaseButton(color="basic" pattern="outline" disabled) basic outline (預設色)
+      BaseButton(color="primary" pattern="outline" disabled) primary outline
+      BaseButton(color="success" pattern="outline" disabled) success outline
+      BaseButton(color="warning" pattern="outline" disabled) warning outline
+      BaseButton(color="danger" pattern="outline" disabled) danger outline
+
+    .my-4
+      .my-1.mr-8 純文字
+      BaseButton(color="basic" pattern="text") basic(預設色)
+      BaseButton(color="primary" pattern="text") primary
+      BaseButton(color="success" pattern="text") success
+      BaseButton(color="warning" pattern="text") warning
+      BaseButton(color="danger" pattern="text") danger
+
+    .my-4
+      .my-1.mr-8 icon 加文字
+      BaseButton(color="basic" pattern="text") 
+        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+        template basic(預設色)
+      BaseButton(color="primary" pattern="text")
+        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+        template primary
+      BaseButton(color="success" pattern="text") 
+        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+        template success
+      BaseButton(color="warning" pattern="text") 
+        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+        template warning
+      BaseButton(color="danger" pattern="text") 
+        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+        template danger
 
     .my-4
       .my-1.mr-8 加載中
+      BaseButton(color="primary") 加載前
       BaseButton(color="primary" loading) 加載中
 
     .my-4

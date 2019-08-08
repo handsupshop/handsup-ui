@@ -1,4 +1,4 @@
-button.align-center.rounded.border(
+button.align-center.rounded.border.leading-tight(
   :class="[exportDisplay, exportClass, exportSize, exportHover]"
   class="focus:outline-none"
   v-on="$listeners"
@@ -8,4 +8,5 @@ button.align-center.rounded.border(
       v-if="loading"
     )
     i.far.fa-spinner.ani-rotation
+  slot(name="icon")
   slot
