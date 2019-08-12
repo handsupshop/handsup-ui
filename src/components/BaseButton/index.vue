@@ -14,9 +14,10 @@ export default {
       default: false
     },
 
-    // 有線＋底色 >> outline="flat"
+    // 純底色     >> fill
     // 純框線     >> outline
-    // 純底色     >> 都不用加
+    // 有線＋底色  >> flat
+    // 純文字     >> text
     pattern: {
       type: String,
       default: 'fill'
