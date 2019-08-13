@@ -16,6 +16,8 @@ import BaseCheckboxGroup from '@/components/BaseCheckboxGroup/index.vue'
 // App Component
 import AppDialog from '@/components/AppDialog/index.vue'
 
+import Message from '@/components/Message/index.vue'
+
 Vue.config.productionTip = false
 Vue.component('BaseButton', BaseButton)
 Vue.component('BaseInput', BaseInput)
@@ -27,6 +29,7 @@ Vue.component('BaseRadioGroup', BaseRadioGroup)
 Vue.component('BaseCheckbox', BaseCheckbox)
 Vue.component('BaseCheckboxGroup', BaseCheckboxGroup)
 Vue.component('AppDialog', AppDialog)
+Vue.component('Message', Message)
 
 new Vue({
   router,

@@ -1,0 +1,27 @@
+/* purgecss ignore */
+// 預設 transition
+button{
+  transition: .2s;
+}
+// loading 動畫
+.ani-rotation{
+  animation: fa-spin 2s linear infinite;
+}
+@keyframes fa-spin {
+  0% {
+      transform: rotate(0deg)
+  }
+  to {
+      transform: rotate(1turn)
+  }
+}
+// button 最小寬度
+.min-w-sm{
+  min-width: 76px;
+}
+.min-w-md{
+  min-width: 90px;
+}
+.min-w-lg{
+  min-width: 100px;
+}
