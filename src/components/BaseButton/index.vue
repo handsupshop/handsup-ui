@@ -101,9 +101,29 @@ export default {
       }
     },
     exportSize () {
-      if (this.size === 'sm') return ['py-1', 'px-4', 'text-xs', 'min-w-sm']
-      if (this.size === 'lg') return ['py-3', 'px-4', 'text-base', 'min-w-lg']
-      return ['py-2', 'px-4', 'text-sm', 'min-w-md']
+      if (this.pattern === 'text') {
+        switch (this.size) {
+          case 'sm':
+            return ['text-xs']
+
+          case 'lg':
+            return ['text-base']
+
+          default:
+            return ['text-sm']
+        }
+      } else {
+        switch (this.size) {
+          case 'sm':
+            return ['py-2', 'px-4', 'text-xs', 'min-w-sm']
+
+          case 'lg':
+            return ['py-3', 'px-4', 'text-base', 'min-w-lg']
+
+          default:
+            return ['py-2', 'px-4', 'text-sm', 'min-w-md']
+        }
+      }
     },
     exportDisplay () {
       if (this.block) return ['block', 'w-full']
