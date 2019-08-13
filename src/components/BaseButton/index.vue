@@ -101,6 +101,7 @@ export default {
       }
     },
     exportSize () {
+      // 純文字不加 padding、min-width
       if (this.pattern === 'text') {
         switch (this.size) {
           case 'sm':
@@ -126,8 +127,12 @@ export default {
       }
     },
     exportDisplay () {
-      if (this.block) return ['block', 'w-full']
-      return ['inline-block', 'my-1', 'mr-1']
+      // 純文字不加 margin
+      if (this.pattern === 'text') {
+        return this.block ? ['block', 'w-full'] : ['inline-block']
+      } else {
+        return this.block ? ['block', 'w-full'] : ['inline-block', 'my-1', 'mr-1']
+      }
     },
     exportHover () {
       let arry = []

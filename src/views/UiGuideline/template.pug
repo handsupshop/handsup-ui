@@ -130,29 +130,39 @@
 
     .my-4
       .my-1.mr-8 純文字
-      BaseButton(color="basic" pattern="text") basic(預設色)
-      BaseButton(color="primary" pattern="text") primary
-      BaseButton(color="success" pattern="text") success
-      BaseButton(color="warning" pattern="text") warning
-      BaseButton(color="danger" pattern="text") danger
+      .inline-block.mr-4
+        BaseButton(color="basic" pattern="text") basic(預設色)
+      .inline-block.mr-4
+        BaseButton(color="primary" pattern="text") primary
+      .inline-block.mr-4
+        BaseButton(color="success" pattern="text") success
+      .inline-block.mr-4
+        BaseButton(color="warning" pattern="text") warning
+      .inline-block.mr-4
+        BaseButton(color="danger" pattern="text") danger
 
     .my-4
       .my-1.mr-8 icon 加文字
-      BaseButton(color="basic" pattern="text") 
-        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
-        template basic(預設色)
-      BaseButton(color="primary" pattern="text")
-        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
-        template primary
-      BaseButton(color="success" pattern="text") 
-        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
-        template success
-      BaseButton(color="warning" pattern="text") 
-        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
-        template warning
-      BaseButton(color="danger" pattern="text") 
-        i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
-        template danger
+      .inline-block.mr-4
+        BaseButton(color="basic" pattern="text") 
+          i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+          template basic(預設色)
+      .inline-block.mr-4
+        BaseButton(color="primary" pattern="text")
+          i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+          template primary
+      .inline-block.mr-4
+        BaseButton(color="success" pattern="text") 
+          i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+          template success
+      .inline-block.mr-4
+        BaseButton(color="warning" pattern="text") 
+          i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+          template warning
+      .inline-block.mr-4
+        BaseButton(color="danger" pattern="text") 
+          i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
+          template danger
 
     .my-4
       .my-1.mr-8 加載中
