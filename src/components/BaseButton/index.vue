@@ -101,9 +101,9 @@ export default {
       }
     },
     exportSize () {
-      if (this.size === 'sm') return ['py-1', 'px-2', 'text-xs']
-      if (this.size === 'lg') return ['p-3', 'text-base']
-      return ['py-2', 'px-3', 'text-sm']
+      if (this.size === 'sm') return ['py-1', 'px-4', 'text-xs', 'min-w-sm']
+      if (this.size === 'lg') return ['py-3', 'px-4', 'text-base', 'min-w-lg']
+      return ['py-2', 'px-4', 'text-sm', 'min-w-md']
     },
     exportDisplay () {
       if (this.block) return ['block', 'w-full']
@@ -136,12 +136,16 @@ export default {
           // 純框線
           case 'outline':
             if (this.color === 'basic') {
-              arry.push('hover:border-primary')
+              arry.push(
+                'hover:text-primary-dark',
+                'hover:bg-primary-vr-light',
+                'hover:border-primary-light'
+              )
             } else {
               arry.push(
-                'hover:text-white',
-                `hover:bg-${this.color}`,
-                `hover:border-${this.color}`
+                `hover:text-${this.color}-dark`,
+                `hover:bg-${this.color}-vr-light`,
+                `hover:border-${this.color}-light`
               )
             }
             break
