@@ -95,6 +95,7 @@ export default {
     }
   },
   methods: {
+    stopClickPropagation () { },
     increase () {
       if (this.currentValue < this.max) {
         this.currentValue += 1

@@ -1,5 +1,6 @@
 .baseInputNumber.relative(
   :class="[exportDisplay, exportControlsPosition, exportTxtSize]"
+  @click.stop="stopClickPropagation"
   )
   input.block.w-full.truncate.text-center.text-black.bg-white.outline-none.border.rounded.appearance-none.leading-normal(
     class="disabled:cursor-not-allowed"
@@ -18,13 +19,13 @@
     )
     button.baseInputNumber-plus(
       class="text-gray-900 bg-transparent hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
-      @click="increase"
+      @click.stop="increase"
       :disabled="isMaxDisabled"
       )
       .fal.fa-angle-up
     button.baseInputNumber-minus(
       class="text-gray-900 bg-transparent border-t border-gray-600 hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
-      @click="decrease"
+      @click.stop="decrease"
       :disabled="isMinDisabled"
       )
       .fal.fa-angle-down
@@ -32,13 +33,13 @@
   button.baseInputNumber-minus(
     class="fas fa-minus text-gray-900 border-gray-600 border-r rounded-l hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
     v-if="controlsPosition === 'between'"
-    @click="decrease"
+    @click.stop="decrease"
     :disabled="isMinDisabled"
     )
   button.baseInputNumber-plus(
     class="fas fa-plus text-gray-900 border-gray-600 border-l rounded-r hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
     v-if="controlsPosition === 'between'"
-    @click="increase"
+    @click.stop="increase"
     :disabled="isMaxDisabled"
     )
   .absolute.mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}
