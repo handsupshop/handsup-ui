@@ -6,37 +6,37 @@
     :class="[exportClass, exportSize, exportError]"
     type="tel"
     v-bind="$attrs"
-    v-on="$listeners"
-    :value="value"
+    :value="currentValue"
     :min="min"
     :max="max"
+    @change="handleChange"
     )
   //- BaseInput(type="tel" v-bind="$attrs")
   .baseInputNumber-iconWrap(
-    class="text-sm border-gray-600 rounded-r bg-gray-300"
+    class="text-sm border-gray-600 rounded-r bg-white"
     v-if="controlsPosition === 'right'"
     )
     button.baseInputNumber-plus(
-      class="hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
+      class="text-gray-900 bg-transparent hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
       @click="increase"
       :disabled="isMaxDisabled"
       )
       .fal.fa-angle-up
     button.baseInputNumber-minus(
-      class="border-t border-gray-600 hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
+      class="text-gray-900 bg-transparent border-t border-gray-600 hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
       @click="decrease"
       :disabled="isMinDisabled"
       )
       .fal.fa-angle-down
 
   button.baseInputNumber-minus(
-    class="fal fa-minus bg-gray-300 border-gray-600 border-r rounded-l hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
+    class="fas fa-minus text-gray-900 border-gray-600 border-r rounded-l hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
     v-if="controlsPosition === 'between'"
     @click="decrease"
     :disabled="isMinDisabled"
     )
   button.baseInputNumber-plus(
-    class="fal fa-plus bg-gray-300 border-gray-600 border-l rounded-r hover:text-primary disabled:text-gray-700 disabled:cursor-not-allowed"
+    class="fas fa-plus text-gray-900 border-gray-600 border-l rounded-r hover:text-primary disabled:text-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
     v-if="controlsPosition === 'between'"
     @click="increase"
     :disabled="isMaxDisabled"

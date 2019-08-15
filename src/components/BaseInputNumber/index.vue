@@ -42,6 +42,7 @@ export default {
   components: {},
   data () {
     return {
+      currentValue: this.value
     }
   },
   computed: {
@@ -85,28 +86,55 @@ export default {
       return 'baseInputNumber-between'
     },
     isMaxDisabled () {
-      if (this.value >= this.max) return true
+      if (this.currentValue >= this.max) return true
       return false
     },
     isMinDisabled () {
-      if (this.value <= this.min) return true
+      if (this.currentValue <= this.min) return true
       return false
     }
   },
   methods: {
     increase () {
-      if (this.value < this.max) {
-        this.$emit('input', this.value + 1)
+      if (this.currentValue < this.max) {
+        this.currentValue += 1
       } else {
-        this.$emit('input', this.max)
+        this.currentValue = this.max
       }
+      this.$emit('input', this.currentValue)
     },
     decrease () {
-      if (this.value > this.min) {
-        this.$emit('input', this.value - 1)
+      if (this.currentValue > this.min) {
+        this.currentValue -= 1
+        // this.$emit('input', this.currentValue - 1)
       } else {
-        this.$emit('input', this.min)
+        this.currentValue = this.min
+        // this.$emit('input', this.min)
       }
+      this.$emit('input', this.currentValue)
+    },
+    handleChange (e) {
+      // console.log(e)
+      const oldValue = this.currentValue
+      let newValue = e.target.value === '' ? undefined : Number(e.target.value)
+      console.log('target before change: ' + e.target.value)
+      console.log('oldValue: ' + oldValue)
+      console.log('newValue: ' + newValue)
+
+      if (!isNaN(newValue) || newValue === '') {
+        this.currentValue = newValue
+        // this.$emit('input', newValue)
+      } else {
+        this.currentValue = oldValue
+        console.log('else')
+        // this.currentValue = 0
+        // this.$emit('input', 0)
+      }
+      e.target.value = this.currentValue
+      this.$emit('input', this.currentValue)
+      // this.$emit('change', newValue, oldValue)
+      console.log('currentValue: ' + this.currentValue)
+      console.log('this.value: ' + this.value)
     }
   }
 }

@@ -62,7 +62,7 @@
       .mr-8.w-20
         .h-20.bg-gray-500
         p gray-500
-        small #very-light-blue
+        small #very-light-blue<br>$line-dark
       .mr-8.w-20
         .h-20.bg-gray-600
         p gray-600
@@ -138,19 +138,19 @@
 
     .my-4
       .my-1.mr-8 icon 加文字
-      BaseButton(color="basic" pattern="text") 
+      BaseButton(color="basic" pattern="text")
         i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
         template basic(預設色)
       BaseButton(color="primary" pattern="text")
         i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
         template primary
-      BaseButton(color="success" pattern="text") 
+      BaseButton(color="success" pattern="text")
         i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
         template success
-      BaseButton(color="warning" pattern="text") 
+      BaseButton(color="warning" pattern="text")
         i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
         template warning
-      BaseButton(color="danger" pattern="text") 
+      BaseButton(color="danger" pattern="text")
         i.fab.fa-angellist(slot="icon" class="inline-block pr-2")
         template danger
 
@@ -277,13 +277,15 @@
 
         h5.mt-8 input number 計數器
         .my-6
-          p 右版本
+          p 右版本 (controlsPosition="right")
           BaseInputNumber.w-48(v-model="inputNum" controlsPosition="right" inline)
+          span.ml-3 輸出 ==> {{ inputNum }}
         .my-6
           p 預設
           BaseInputNumber.w-48(v-model="inputNum2" inline)
         .my-6
           p 最小值/最大值（預設最小值為0）
+          p.text-danger ex. 最大值為10 (:min="0" :max="10")
           BaseInputNumber.w-48(v-model="inputNum3" :min="0" :max="10" inline)
           BaseInputNumber.w-48(v-model="inputNum4" :min="0" :max="10" inline)
         .my-6
