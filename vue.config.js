@@ -1,6 +1,6 @@
 module.exports = {
-  publicPath: './dist',
-  // outputDir: process.env.outputDir,
+  publicPath: '/',
+  outputDir: 'dist',
 
   // 全域CSS
   css: {
