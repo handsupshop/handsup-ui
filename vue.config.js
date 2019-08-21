@@ -1,6 +1,5 @@
 module.exports = {
-  publicPath: '/',
-  outputDir: 'dist',
+  publicPath: './',
 
   // 全域CSS
   css: {
