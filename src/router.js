@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from './views/Home.vue'
+import Home from './views/Home.vue'
 import UiGuideline from './views/UiGuideline/index.vue'
 
 Vue.use(Router)
@@ -11,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'UiGuideline',
       component: UiGuideline
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: Home
     }
     // {
     //   path: '/about',

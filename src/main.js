@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 
 // Base Component
-import BaseButton from '@/components/BaseButton/index.vue'
+import BaseButton from '@/components/BaseButton/src/index.vue'
 import BaseInput from '@/components/BaseInput/index.vue'
 import BaseInputNumber from '@/components/BaseInputNumber/index.vue'
 import BaseSelect from '@/components/BaseSelect/index.vue'
