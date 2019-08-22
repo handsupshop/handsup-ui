@@ -14,7 +14,7 @@ export default {
     // 是否可以點 modal 時關閉 Dialog
     closeOnClickModal: {
       type: Boolean,
-      default: true
+      default: false
     },
     // 是否顯示叉叉按鈕
     showClose: {
