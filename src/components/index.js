@@ -1,15 +1,15 @@
-import AppDialog from './AppDialog/index.vue'
-import BaseButton from './BaseButton/index.vue'
-import BaseCheckbox from './BaseCheckbox/index.vue'
-import BaseCheckboxGroup from './BaseCheckboxGroup/index.vue'
-import BaseImage from './BaseImage/index.vue'
-import BaseInput from './BaseInput/index.vue'
-import BaseInputNumber from './BaseInputNumber/index.vue'
-import BaseRadio from './BaseRadio/index.vue'
-import BaseRadioGroup from './BaseRadioGroup/index.vue'
-import BaseSelect from './BaseSelect/index.vue'
-import BaseTextarea from './BaseTextarea/index.vue'
-import Message from './Message/index.vue'
+import AppDialog from './AppDialog/index.js'
+import BaseButton from './BaseButton/index.js'
+import BaseCheckbox from './BaseCheckbox/index.js'
+import BaseCheckboxGroup from './BaseCheckboxGroup/index.js'
+import BaseImage from './BaseImage/index.js'
+import BaseInput from './BaseInput/index.js'
+import BaseInputNumber from './BaseInputNumber/index.js'
+import BaseRadio from './BaseRadio/index.js'
+import BaseRadioGroup from './BaseRadioGroup/index.js'
+import BaseSelect from './BaseSelect/index.js'
+import BaseTextarea from './BaseTextarea/index.js'
+import Message from './Message/index.js'
 
 const Components = [
   AppDialog,
@@ -60,5 +60,6 @@ if (GlobalVue) {
 
 // 在 Local 引入時要直接使用元件
 export default {
-  install
+  install,
+  BaseButton
 }
