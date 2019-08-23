@@ -5,7 +5,7 @@
   "main": "dist/handsup-guideline.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "deploy": "vue-cli-service build",
+    "build:doc": "vue-cli-service build --mode publish",
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service build --target lib --name handsup-guideline ./src/components/index.js"
   },
