@@ -2,6 +2,8 @@
   <img src="/src/assets/handsup-logo.svg">
 </p>
 
+> HandsUp UI Toolkit
+
 ## Install
 ```shell
 yarn add handsup-ui
