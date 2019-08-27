@@ -1,0 +1,21 @@
+.appAlert {
+	padding: 13px 20px;
+	color: $vr-dark;
+	border: 1px solid $warning;
+	border-radius: 4px;
+	background: rgba($warning, 0.1);
+	display: inline-block;
+	i {
+		color: $warning;
+		font-size: 20px;
+		vertical-align: middle;
+	}
+	a,
+	a:hover {
+			color: $primary;
+	}
+	i.fa-times {
+			color: $light;
+			font-size: 20px;
+	}
+}

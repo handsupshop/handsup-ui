@@ -15,6 +15,7 @@ import BaseCheckbox from '@/components/BaseCheckbox/index.vue'
 import BaseCheckboxGroup from '@/components/BaseCheckboxGroup/index.vue'
 // App Component
 import AppDialog from '@/components/AppDialog/index.vue'
+import AppAlert from '@/components/AppAlert/index.vue'
 
 import Message from '@/components/Message/index.vue'
 
@@ -29,6 +30,7 @@ Vue.component('BaseRadioGroup', BaseRadioGroup)
 Vue.component('BaseCheckbox', BaseCheckbox)
 Vue.component('BaseCheckboxGroup', BaseCheckboxGroup)
 Vue.component('AppDialog', AppDialog)
+Vue.component('AppAlert', AppAlert)
 Vue.component('Message', Message)
 
 new Vue({
