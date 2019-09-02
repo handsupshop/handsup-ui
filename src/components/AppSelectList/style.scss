@@ -1,0 +1,27 @@
+.appSelectList {
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+	background-color: transparent;
+	position: relative;
+
+	.wrapper {
+		width: 100%;
+		height: 100%;
+		max-height: 450px;
+		overflow-y: auto;
+	}
+
+	&.error {
+		&:before {
+			content: '';
+			border-radius: 4px;
+			border: solid 1px var(--danger);
+			position: absolute;
+			top: -5px;
+			bottom: -5px;
+			left: -5px;
+			right: -5px;
+		}
+	}
+}

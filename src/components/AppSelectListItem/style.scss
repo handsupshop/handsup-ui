@@ -1,0 +1,105 @@
+.appSelectListItem {
+		position: relative;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 10px 20px;
+		cursor: pointer;
+		transition: all .3s;
+		border: 1px solid #e2e2e2;
+		border-radius: 4px;
+		background-color: $white;
+
+		&.active {
+			color: $primary;
+			border: 1px solid $primary;
+			background-color: $white;
+		}
+
+		&.disabled {
+			cursor: not-allowed;
+			background-color: $gray-100;
+		}
+
+		&:not(.disabled):hover {
+			border-color: $primary;
+		}
+
+		.select-circle {
+			position: relative;
+			width: 14px;
+			height: 14px;
+			margin-right: 24px;
+			border: 1px solid $line-vr-dark;
+			border-radius: 50%;
+
+			&.disabled {
+				border: 0;
+
+			}
+
+			.small-circle {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 4px;
+				height: 4px;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+			}
+		}
+
+		img {
+			@include size(45px);
+			border-radius: 50%;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		 + .appSelectListItem {
+			margin-top: 10px;
+		}
+
+  // 打勾動畫
+  .checkMark {
+		position: relative;
+		width: 20px;
+  }
+
+  .active .checkMark {
+    display: block;
+  }
+
+  .checkMark:after {
+    animation: check .1s;
+  }
+
+  .checkMark:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 10px;
+    height: 17px;
+    transform: scaleX(-1) translateX(10px) rotate(135deg);
+    transform-origin: left top;
+    border-top: 4px solid $primary;
+    border-right: 4px solid $primary;
+  }
+
+  @keyframes check {
+    0% {
+      width: 0;
+      height: 0;
+    }
+
+    33.3333% {
+      width: 10px;
+      height: 0;
+    }
+  }
+
+
+}

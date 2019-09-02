@@ -1,10 +1,14 @@
 <script>
 export default {
-  name: 'AppAlert',
-  components: {},
+  name: 'appSelectList',
   props: {
-    color: {
-      type: String
+    list: {
+      type: Array
+    }
+  },
+  methods: {
+    handleClick (item, index) {
+
     }
   }
 }

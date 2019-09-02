@@ -1,5 +1,7 @@
 import AppAlert from './AppAlert/index.vue'
 import AppDialog from './AppDialog/index.vue'
+import AppSelectList from './AppSelectList/index.vue'
+import AppSelectListItem from './AppSelectListItem/index.vue'
 import BaseButton from './BaseButton/index.vue'
 import BaseCheckbox from './BaseCheckbox/index.vue'
 import BaseCheckboxGroup from './BaseCheckboxGroup/index.vue'
@@ -16,6 +18,8 @@ import AppSteps from './AppSteps/index.vue'
 const Components = [
   AppAlert,
   AppDialog,
+  AppSelectList,
+  AppSelectListItem,
   BaseButton,
   BaseCheckbox,
   BaseCheckboxGroup,

@@ -432,10 +432,18 @@
     AppAlert 這是一個 Alert
 
     h4.my-8 Steps
-    AppSteps.my-8(:steps="[{title: 'a' }, {title: 'b'}, {title: 'c'}]" active="1")
+    AppSteps.my-8(:steps="[{title: 'a' }, {title: 'b'}, {title: 'c'}]" :active="1")
       template(v-slot:default="{step}")
         span {{ step.title }}
 
-    AppSteps(:steps="[{title: 'a', icon: 'fal fa-user-check' }, {title: 'b', icon: 'fal fa-user-check'}, {title: 'c', icon: 'fal fa-user-check'}]" active="2")
+    AppSteps(:steps="[{title: 'a', icon: 'fal fa-user-check' }, {title: 'b', icon: 'fal fa-user-check'}, {title: 'c', icon: 'fal fa-user-check'}]" :active="2")
       template(v-slot:default="{step}")
         span {{ step.title }}
+
+    h4.my-8 AppSelectList
+    AppSelectList
+      AppSelectListItem(v-for="i in 3" :key="i"
+        :active="true")
+        .flex.items-center(slot="left")
+          BaseImage.mr-2(type='user' size="10")
+          p 我是 AppSelectList
