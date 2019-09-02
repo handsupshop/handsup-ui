@@ -1,6 +1,7 @@
 <script>
 export default {
   inheritAttrs: false,
+  name: 'BaseInput',
   props: {
     color: {
       type: String,
@@ -31,8 +32,7 @@ export default {
       default: 'left'
     }
   },
-  name: 'BaseInput',
-  components: {},
+
   data () {
     return {
     }
@@ -79,6 +79,11 @@ export default {
         if (this.iconPosition === 'right') return 'pl-3 pr-10'
         return 'pl-10 pr-3'
       }
+    }
+  },
+  methods: {
+    handleInput () {
+      this.$emit('input', event.target.value)
     }
   }
 }

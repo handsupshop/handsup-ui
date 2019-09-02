@@ -52,6 +52,7 @@ export default {
       SampleDialogVisibleClose: false,
       SampleMsg: false,
       alertError: false,
+      baseInputValue: '',
       inputNum: 10,
       inputNum2: 500000000000,
       inputNum3: 5,
