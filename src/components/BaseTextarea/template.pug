@@ -5,5 +5,6 @@
     :disabled="exportDisabled"
     v-model.trim="message"
     v-on="$listeners"
+    v-bind="$attrs"
   )
   .absolute.mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}

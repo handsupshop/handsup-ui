@@ -1,5 +1,6 @@
 <script>
 export default {
+  inheritAttrs: false,
   props: {
     color: {
       type: String,
