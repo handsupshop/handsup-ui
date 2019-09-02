@@ -1,0 +1,9 @@
+ul.steps
+  li.step(v-for="(step, index) in displaySteps" :key="index" :class="step.status")
+    .step-icon.mb-2
+      i(v-if="step.icon" :class="step.icon")
+      span(v-else) {{ index + 1 }}
+    .toolbox
+      .step-main
+        slot(v-bind:step="step")
+    .step-line

@@ -10,6 +10,7 @@ import BaseRadioGroup from './BaseRadioGroup/index.js'
 import BaseSelect from './BaseSelect/index.js'
 import BaseTextarea from './BaseTextarea/index.js'
 import Message from './Message/index.js'
+import AppSteps from './AppSteps/index.js'
 
 const Components = [
   AppDialog,
@@ -23,7 +24,8 @@ const Components = [
   BaseRadioGroup,
   BaseSelect,
   BaseTextarea,
-  Message
+  Message,
+  AppSteps
 ]
 
 const install = function (Vue, opts = {}) {

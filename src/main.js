@@ -16,7 +16,7 @@ import BaseCheckboxGroup from '@/components/BaseCheckboxGroup/index.vue'
 // App Component
 import AppDialog from '@/components/AppDialog/index.vue'
 import AppAlert from '@/components/AppAlert/index.vue'
-
+import AppSteps from '@/components/AppSteps/index.vue'
 import Message from '@/components/Message/index.vue'
 
 Vue.config.productionTip = false
@@ -32,6 +32,7 @@ Vue.component('BaseCheckboxGroup', BaseCheckboxGroup)
 Vue.component('AppDialog', AppDialog)
 Vue.component('AppAlert', AppAlert)
 Vue.component('Message', Message)
+Vue.component('AppSteps', AppSteps)
 
 new Vue({
   router,

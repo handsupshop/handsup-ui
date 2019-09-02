@@ -1,0 +1,95 @@
+.steps {
+  @include flex(space-between, center);
+  padding: 0;
+
+  .step {
+    @include flex(flex-start, center);
+
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+
+    &-icon {
+      @include flex(center);
+      @include size(50px);
+
+      position: relative;
+      z-index: 1;
+      color: #9b9b9b;
+      border: 1px solid $line-dark;
+      border-radius: 50%;
+      background-color: #ffffff;
+			font-size: h(4);
+			font-weight: 300;
+		}
+
+    &-line {
+      position: absolute;
+      top: 26px;
+      left: 50%;
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      border: 1px dashed $line-dark;
+      background: transparent;
+    }
+
+    &:last-child {
+      .step-line {
+        display: none;
+      }
+    }
+  }
+
+  .step.active {
+    .step-icon {
+      color: $primary;
+      border: 1px solid $primary-light;
+      background-color: $primary-vr-light;
+    }
+
+    .step-main {
+      color: $vr-dark;
+      font-weight: bold;
+    }
+  }
+
+  .step.completed {
+    .step-icon {
+      color: $white;
+      border: 1px solid $primary;
+      background-color: $primary;
+    }
+
+    .step-main {
+      color: $vr-dark;
+      font-weight: normal;
+    }
+
+    .step-line {
+      border: 1px solid $primary;
+    }
+  }
+
+  li.failed {
+    .icon {
+      color: $danger;
+      border: 1px solid $danger;
+      background-color: $danger-vr-light;
+    }
+
+    .toolbox {
+      color: $vr-dark;
+      font-weight: bold;
+    }
+
+    .line {
+      border: 1px solid $danger;
+    }
+
+    .fas {
+      color: $danger;
+    }
+  }
+}
