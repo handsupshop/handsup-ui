@@ -14,6 +14,7 @@ yarn add handsup-ui
 ```shell
 import Vue from 'vue'
 import handsupui from 'handsup-ui'
+import 'handsup-ui/src/components/index.scss'
 
 Vue.use(handsupui)
 ```
