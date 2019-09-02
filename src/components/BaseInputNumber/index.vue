@@ -38,7 +38,7 @@ export default {
     }
 
   },
-  name: 'baseInputNumber',
+  name: 'BaseInputNumber',
   components: {},
   data () {
     return {

@@ -31,7 +31,7 @@ export default {
       default: true
     }
   },
-  name: 'appDialog',
+  name: 'AppDialog',
   components: {},
   data () {
     return {

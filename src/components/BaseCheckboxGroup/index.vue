@@ -15,7 +15,7 @@ export default {
       default: '填寫錯誤'
     }
   },
-  name: 'baseCheckboxGroup',
+  name: 'BaseCheckboxGroup',
   components: {},
   data () {
     return {

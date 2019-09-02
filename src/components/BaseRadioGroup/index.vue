@@ -15,7 +15,7 @@ export default {
       default: '填寫錯誤'
     }
   },
-  name: 'baseRadioGroup',
+  name: 'BaseRadioGroup',
   components: {},
   data () {
     return {

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'appAlert',
+  name: 'AppAlert',
   components: {},
   props: {
     color: {

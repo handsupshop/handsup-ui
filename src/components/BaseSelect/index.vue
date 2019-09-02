@@ -29,7 +29,7 @@ export default {
       default: () => []
     }
   },
-  name: 'baseSelect',
+  name: 'BaseSelect',
   components: {},
   data () {
     return {

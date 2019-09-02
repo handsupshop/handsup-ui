@@ -23,7 +23,7 @@ export default {
       default: false
     }
   },
-  name: 'baseRadio',
+  name: 'BaseRadio',
   components: {},
   data () {
     return {

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'base-image',
+  name: 'BaseImage',
   components: {},
   props: {
     type: {

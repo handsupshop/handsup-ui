@@ -1,5 +1,4 @@
 <script>
-import { setTimeout } from 'timers';
 export default {
   props: {
     color: {
@@ -20,17 +19,17 @@ export default {
   data () {
     return {
       timer: null,
-      closed: false,
+      closed: false
     }
   },
   computed: {
     exportClass () {
-      return[
+      return [
         `text-${this.color}-dark`,
         `border-${this.color}-light`,
         `bg-${this.color}-vr-light`
       ]
-    }, 
+    },
     exportIcon () {
       switch (this.color) {
         // 成功
@@ -50,7 +49,7 @@ export default {
       }
     }
   },
-  mounted() {
+  mounted () {
     // this.startTimer()
   },
   methods: {
@@ -58,7 +57,7 @@ export default {
     //   const vm = this
     //   if (vm.duration > 0) {
     //       vm.timer = setTimeout( function () {
-            
+
     //       }, vm.duration)
     //   }
     // }

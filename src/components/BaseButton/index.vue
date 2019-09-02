@@ -31,7 +31,7 @@ export default {
       default: false
     }
   },
-  name: 'baseButton',
+  name: 'BaseButton',
   components: {},
   data () {
     return {

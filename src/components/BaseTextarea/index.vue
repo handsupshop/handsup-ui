@@ -30,7 +30,7 @@ export default {
       default: null
     }
   },
-  name: 'baseTextarea',
+  name: 'BaseTextarea',
   components: {},
   data () {
     return {

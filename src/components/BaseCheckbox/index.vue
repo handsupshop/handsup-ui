@@ -22,7 +22,7 @@ export default {
       default: false
     }
   },
-  name: 'baseCheckbox',
+  name: 'BaseCheckbox',
   components: {},
   data () {
     return {

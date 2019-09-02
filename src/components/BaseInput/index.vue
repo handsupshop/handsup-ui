@@ -31,7 +31,7 @@ export default {
       default: 'left'
     }
   },
-  name: 'baseInput',
+  name: 'BaseInput',
   components: {},
   data () {
     return {

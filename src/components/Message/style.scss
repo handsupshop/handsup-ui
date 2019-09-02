@@ -1,12 +1,12 @@
 /* purgecss ignore */
-.message{
+.message {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   max-width: 380px;
 }
-.btn-close{
+.btn-close {
   color: $text-light;
   opacity: 0.5;
   transition: .3s;
