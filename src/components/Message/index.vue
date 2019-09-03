@@ -35,15 +35,12 @@ export default {
         // 成功
         case 'success':
           return 'fa-check-circle'
-          break
         // 警告
         case 'warning':
           return 'fa-exclamation-circle'
-          break
         // 錯誤
         case 'danger':
           return 'fa-times-circle'
-          break
         default:
           return 'fa-info-circle'
       }
