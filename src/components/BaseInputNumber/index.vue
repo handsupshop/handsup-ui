@@ -45,6 +45,18 @@ export default {
       currentValue: this.value
     }
   },
+  watch: {
+    value: {
+      immediate: true,
+      handler (value) {
+        let newVal = value === undefined ? value : Number(value)
+        if (newVal >= this.max) newVal = this.max
+        if (newVal <= this.min) newVal = this.min
+        this.currentValue = newVal
+        this.$emit('input', newVal)
+      }
+    }
+  },
   computed: {
     exportClass () {
       if (this.color === 'basic') {
@@ -103,39 +115,32 @@ export default {
         this.currentValue = this.max
       }
       this.$emit('input', this.currentValue)
+      this.$emit('change', this.currentValue)
     },
     decrease () {
       if (this.currentValue > this.min) {
         this.currentValue -= 1
-        // this.$emit('input', this.currentValue - 1)
       } else {
         this.currentValue = this.min
-        // this.$emit('input', this.min)
       }
       this.$emit('input', this.currentValue)
+      this.$emit('change', this.currentValue)
     },
     handleChange (e) {
-      // console.log(e)
       const oldValue = this.currentValue
       let newValue = e.target.value === '' ? undefined : Number(e.target.value)
-      console.log('target before change: ' + e.target.value)
-      console.log('oldValue: ' + oldValue)
-      console.log('newValue: ' + newValue)
 
       if (!isNaN(newValue) || newValue === '') {
         this.currentValue = newValue
-        // this.$emit('input', newValue)
       } else {
         this.currentValue = oldValue
-        console.log('else')
-        // this.currentValue = 0
-        // this.$emit('input', 0)
       }
+      if (newValue >= this.max) this.currentValue = this.max
+      if (newValue <= this.min) this.currentValue = this.min
+
       e.target.value = this.currentValue
       this.$emit('input', this.currentValue)
-      // this.$emit('change', newValue, oldValue)
-      console.log('currentValue: ' + this.currentValue)
-      console.log('this.value: ' + this.value)
+      this.$emit('change', this.currentValue)
     }
   }
 }
