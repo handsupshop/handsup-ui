@@ -110,8 +110,7 @@ module.exports = {
       '8': '8px'
     },
     boxShadow: {
-      default:
-        '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      default: '0 2px 8px 0 rgba(0, 0, 0, 0.05)',
       md:
         '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       lg:
@@ -176,16 +175,22 @@ module.exports = {
       ]
     },
     fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem'
+      h1: '46px',
+      h2: '36px',
+      h3: '28px',
+      h4: '22px',
+      h5: '18px',
+      h6: '16px',
+      sm: '0.875rem', // 14px
+      xs: '0.75rem' // 12px
+      // base: '1rem', // 16
+      // lg: '1.125rem', // 18
+      // xl: '1.25rem', // 20
+      // '2xl': '1.5rem', // 24
+      // '3xl': '1.875rem', // 30
+      // '4xl': '2.25rem', // 36
+      // '5xl': '3rem', // 48
+      // '6xl': '4rem' // 64
     },
     fontWeight: {
       hairline: '100',
@@ -249,7 +254,8 @@ module.exports = {
       '4xl': '56rem',
       '5xl': '64rem',
       '6xl': '72rem',
-      full: '100%'
+      full: '100%',
+      container: '1180px'
     },
     minHeight: {
       '0': '0',
