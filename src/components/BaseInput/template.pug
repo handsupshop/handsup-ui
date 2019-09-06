@@ -1,9 +1,15 @@
-.baseInput.relative(:class="[exportDisplay]")
-  input.block.w-full.truncate.text-black.bg-white.outline-none.border.rounded.appearance-none.leading-normal(
-    :class="[exportClass, exportSize, exportPadding, exportError]"
-    class="disabled:cursor-not-allowed"
+.baseInput(:class="[exportClass]")
+  input.baseInput-inner.baseInput--medium(
+    ref="input"
+    :class=`[
+      inputSize ? 'baseInput--medium' : '',
+      {'is-disabled': inputDisabled}
+    ]`
     v-bind="$attrs"
     @input="handleInput"
+    @change="handleChange"
   )
-  i.absolute.inset-y-0.flex.items-center.justify-center.w-10(v-if="iconClass" :class="[iconClass, exportIcon]")
-  .absolute.mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}
+  //- i.absolute.inset-y-0.flex.items-center.leading-normal.w-10(v-if="iconClass" :class="[iconClass, exportIcon]")
+  span.absolute.right-0.bottom-0.pr-2.h-full.flex.items-center.text-gray-800.text-xs(v-if="showWordLimit" ref="inputCount") {{textLength}}/{{upperLimit}}
+
+  .mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}

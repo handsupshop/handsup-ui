@@ -1,0 +1,41 @@
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+.baseInput {
+	@apply relative w-full;
+
+	&-inner {
+		@apply bg-white appearance-none text-black outline-none rounded border border-gray-600 leading-none px-4;
+
+		&::placeholder {
+      @apply text-gray-700;
+    }
+
+		&:hover {
+			@apply border-gray-700;
+		}
+
+		&:focus {
+			@apply border-primary;
+		}
+
+		&.is-disabled {
+			@apply bg-gray-100 border-gray-600 text-gray-700 cursor-not-allowed;
+		}
+
+		@include m(medium) {
+			font-size: 25px;
+		}
+	}
+}
