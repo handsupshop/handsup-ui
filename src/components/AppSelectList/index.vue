@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'appSelectList',
+  name: 'AppSelectList',
   props: {
     list: {
       type: Array
