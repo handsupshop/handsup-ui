@@ -1,102 +1,59 @@
 <script>
-const basicClass = []
-
-const error = ['text-black', 'border-danger', 'hover:border-danger', 'focus:border-danger']
-const sizeSm = ['py-2', 'text-xs', 'h-8']
-const sizeMd = ['py-2', 'text-sm', 'h-9']
-const sizeLg = ['p-3', 'text-base', 'h-10']
-
-const displayInline = ['inline-block', 'my-1', 'mr-1']
-const displayBlock = ['block', 'w-full']
+import { styleMapping } from './style'
 
 export default {
   name: 'BaseInput',
   inheritAttrs: false,
+
+  data () {
+    return {
+      hovering: false,
+      focused: false,
+      isComposing: false
+    }
+  },
+
   props: {
     value: [String, Number],
+    size: String,
     disabled: Boolean,
-    color: {
+    type: {
       type: String,
-      default: 'basic'
+      default: 'text'
     },
-    size: {
-      type: String,
-      default: ''
-    },
-    inline: {
+    suffixIcon: String,
+    prefixIcon: String,
+    label: String,
+    showWordLimit: {
       type: Boolean,
       default: false
     },
+    tabindex: String,
     isError: {
       type: Boolean,
       default: false
     },
-    errorMessage: {
-      type: String,
-      default: '填寫錯誤'
-    },
-    iconClass: {
-      type: [String, Boolean],
-      default: ''
-    },
-    iconPosition: {
-      type: String,
-      default: 'left'
-    },
-    showWordLimit: {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  mounted () {
-    if (this.showWordLimit) {
-      this.calcCountPadding()
-    }
-  },
-
-  updated () {
-    if (this.showWordLimit) {
-      this.$nextTick(this.calcCountPadding)
-    }
+    errorMsg: String
   },
 
   computed: {
-    exportInputClass () {
-      return [
-        ...(this.color === 'basic' ? basicClass : [`border-${this.color}`,
-          'disabled:bg-gray-200',
-          'disabled:opacity-50']),
-        ...(this.inline ? displayInline : displayBlock),
-        ...this.computedSize,
-        ...(this.isError ? error : '')
-      ]
+    inputSize () {
+      return this.size
     },
-    computedSize () {
-      if (this.size === 'sm') return sizeSm
-      if (this.size === 'lg') return sizeLg
-      return sizeMd
+    inputDisabled () {
+      return this.disabled || (this.elForm || {}).disabled
     },
-    exportClass () {
-      if (this.inline) return ['inline-block', 'my-1', 'mr-1']
-      return ['block', 'w-full']
+    nativeInputValue () {
+      return this.value === null || this.value === undefined ? '' : String(this.value)
     },
-    exportIcon () {
-      if (this.iconPosition === 'right') return 'right-0'
-      return 'left-0'
-    },
-    exportPadding () {
-      if (this.iconClass === '') {
-        return 'px-3'
-      } else {
-        if (this.iconPosition === 'right') return 'pl-3 pr-10'
-        return 'pl-10 pr-3'
-      }
+    isWordLimitVisible () {
+      return this.showWordLimit &&
+          this.$attrs.maxlength &&
+          (this.type === 'text' || this.type === 'textarea') &&
+          !this.inputDisabled
     },
     upperLimit () {
-      console.log(this.$attrs)
-
-      return this.$attrs.maxlength
+      return Number(this.$attrs.maxlength)
     },
     textLength () {
       if (typeof this.value === 'number') {
@@ -107,25 +64,116 @@ export default {
     },
     inputExceed () {
       // show exceed style if length of initial value greater then maxlength
-      return this.showWordLimit &&
-          (this.textLength > this.upperLimit)
+      return this.isWordLimitVisible && (this.textLength > this.upperLimit)
     },
-    inputDisabled () {
-      return this.disabled
+    inputFulled () {
+      return this.isWordLimitVisible && (this.textLength === this.upperLimit)
+    },
+    hasPrefix () {
+      return !!(this.$slots.prefix || this.prefixIcon)
     }
   },
+
+  watch: {
+    // native input value is set explicitly
+    // do not use v-model / :value in template
+    // see: https://github.com/ElemeFE/element/issues/14521
+    nativeInputValue () {
+      this.setNativeInputValue()
+    },
+    // when change between <input> and <textarea>,
+    // update DOM dependent value and styles
+    // https://github.com/ElemeFE/element/issues/14857
+    type () {
+      this.$nextTick(() => {
+        this.setNativeInputValue()
+      })
+    }
+  },
+
   methods: {
+    getStyle (item) {
+      // console.log(styleMapping[item])
+      return styleMapping[item]
+    },
+    focus () {
+      this.getInput().focus()
+    },
+    blur () {
+      this.getInput().blur()
+    },
+    handleBlur (event) {
+      this.focused = false
+      this.$emit('blur', event)
+    },
+    select () {
+      this.getInput().select()
+    },
+    setNativeInputValue () {
+      const input = this.getInput()
+      if (!input) return
+      if (input.value === this.nativeInputValue) return
+      input.value = this.nativeInputValue
+    },
+    handleFocus (event) {
+      this.focused = true
+      this.$emit('focus', event)
+    },
+    handleCompositionStart () {
+      this.isComposing = true
+    },
+    handleCompositionEnd (event) {
+      this.isComposing = false
+      this.handleInput(event)
+    },
     handleInput (event) {
+      // should not emit input during composition
+      // see: https://github.com/ElemeFE/element/issues/10516
+      if (this.isComposing) return
+
+      // hack for https://github.com/ElemeFE/element/issues/8548
+      // should remove the following line when we don't support IE
+      if (event.target.value === this.nativeInputValue) return
+
       this.$emit('input', event.target.value)
-      console.log(event.target.value)
-      console.log('input value', this.$refs.input.value)
-      console.log('props value', this.value)
+
+      // ensure native input value is controlled
+      // see: https://github.com/ElemeFE/element/issues/12850
+      this.$nextTick(this.setNativeInputValue)
     },
     handleChange (event) {
       this.$emit('change', event.target.value)
     },
+    getInput () {
+      return this.$refs.input || this.$refs.textarea
+    },
+    getSuffixVisible () {
+      return this.$slots.suffix ||
+          this.suffixIcon ||
+          this.showClear ||
+          this.isWordLimitVisible ||
+          (this.validateState && this.needStatusIcon)
+    },
     calcCountPadding () {
-      this.$refs.input.style.paddingRight = (this.$refs.inputCount.clientWidth + 8) + 'px'
+      const input = this.type !== 'textarea' ? this.$refs.textarea : this.$refs.input
+      input.style.paddingRight = (this.$refs.inputCount.clientWidth + 8 + 16) + 'px'
+    }
+  },
+
+  created () {
+    this.$on('inputSelect', this.select)
+  },
+
+  mounted () {
+    this.setNativeInputValue()
+    if (this.showWordLimit) {
+      this.calcCountPadding()
+    }
+  },
+
+  updated () {
+    if (this.showWordLimit) {
+      this.calcCountPadding()
     }
   }
 }

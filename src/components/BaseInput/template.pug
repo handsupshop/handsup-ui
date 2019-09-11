@@ -1,15 +1,59 @@
-.baseInput(:class="[exportClass]")
-  input.baseInput-inner.baseInput--medium(
-    ref="input"
-    :class=`[
-      inputSize ? 'baseInput--medium' : '',
-      {'is-disabled': inputDisabled}
-    ]`
-    v-bind="$attrs"
-    @input="handleInput"
-    @change="handleChange"
-  )
-  //- i.absolute.inset-y-0.flex.items-center.leading-normal.w-10(v-if="iconClass" :class="[iconClass, exportIcon]")
-  span.absolute.right-0.bottom-0.pr-2.h-full.flex.items-center.text-gray-800.text-xs(v-if="showWordLimit" ref="inputCount") {{textLength}}/{{upperLimit}}
+.base-input(:class="getStyle('input')")
+  template(v-if="type !== 'textarea'")
+    //- 前置元素
+    //- .base-input-group__prepend(v-if="$slots.prepend")
+      slot(name="prepend")
+    input(
+      ref="input"
+      v-bind="$attrs"
+      :class=`getStyle('inner')({
+        disabled: inputDisabled,
+        size,
+        prefix: hasPrefix,
+        isError })`
+      :disabled="inputDisabled"
+      @compositionstart="handleCompositionStart"
+      @compositionend="handleCompositionEnd"
+      @input="handleInput"
+      @focus="handleFocus"
+      @blur="handleBlur"
+      @change="handleChange"
+    )
+    //- 前置内容
+    span(v-if="hasPrefix" :class="getStyle('prefix')")
+      slot(name="prefix")
+      i(v-if="prefixIcon" :class="[prefixIcon, getStyle('icon')]")
 
-  .mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}
+    span(:class="getStyle('suffix')")
+      span(:class="getStyle('suffix_inner')")
+        template(v-if="!isWordLimitVisible")
+          slot(name="suffix")
+          i(v-if="suffixIcon" :class="suffixIcon")
+        template(v-else)
+          span(ref="inputCount" :class="getStyle('count')()")
+            span(:class="getStyle('count_length')(inputFulled)") {{ textLength }}
+            span /{{ upperLimit }}
+
+  textarea(v-else
+    ref="textarea"
+    v-bind="$attrs"
+    :class=`getStyle('inner')({
+        disabled: inputDisabled,
+        size,
+        isError,
+        isTextarea: true })`
+    :disabled="inputDisabled"
+    @compositionstart="handleCompositionStart"
+    @compositionend="handleCompositionEnd"
+    @input="handleInput"
+    @focus="handleFocus"
+    @blur="handleBlur"
+    @change="handleChange")
+  span(v-if="isWordLimitVisible && type === 'textarea'" ref="inputCount" :class="getStyle('count')(type === 'textarea')")
+    span(:class="getStyle('count_length')(inputFulled)") {{ textLength }}
+    span /{{ upperLimit }}
+
+  //- i.absolute.inset-y-0.flex.items-center.leading-normal.w-10(v-if="iconClass" :class="[iconClass, exportIcon]")
+  //- span.absolute.right-0.bottom-0.pr-2.h-full.flex.items-center.text-gray-800.text-xs(v-if="showWordLimit" ref="inputCount") {{textLength}}/{{upperLimit}}
+
+  .mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMsg }}
