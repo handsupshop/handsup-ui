@@ -23,6 +23,14 @@ import AppSelectListItem from '@/components/AppSelectListItem/index.vue'
 
 import Message from '@/components/Message/index.vue'
 
+import VueHighlightJS from 'vue-highlight.js'
+import 'highlight.js/styles/default.css'
+
+// Highlight.js languages (Only required languages)
+import css from 'highlight.js/lib/languages/css'
+import javascript from 'highlight.js/lib/languages/javascript'
+import vue from 'vue-highlight.js/lib/languages/vue'
+
 Vue.config.productionTip = false
 Vue.component('BaseButton', BaseButton)
 Vue.component('BaseImage', BaseImage)
@@ -40,6 +48,18 @@ Vue.component('Message', Message)
 Vue.component('AppSteps', AppSteps)
 Vue.component('AppSelectList', AppSelectList)
 Vue.component('AppSelectListItem', AppSelectListItem)
+
+/*
+* Use Vue Highlight.js
+*/
+Vue.use(VueHighlightJS, {
+  // Register only languages that you want
+  languages: {
+    css,
+    javascript,
+    vue
+  }
+})
 
 new Vue({
   router,

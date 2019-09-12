@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import UiGuideline from './views/UiGuideline/index.vue'
+import BaseInput from './views/BaseInput.vue'
 
 Vue.use(Router)
 
@@ -10,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'UiGuideline',
       component: UiGuideline
+    },
+    {
+      path: '/base-input',
+      name: 'baseInput',
+      component: BaseInput
     }
     // {
     //   path: '/about',
