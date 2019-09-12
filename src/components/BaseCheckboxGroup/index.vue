@@ -17,6 +17,10 @@ export default {
     errorMsg: {
       type: String,
       default: '填寫錯誤'
+    },
+    flex: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

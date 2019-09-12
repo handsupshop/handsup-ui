@@ -1,5 +1,6 @@
 label.baseCheckbox(:class=`getStyle('label')({
   isButton: button, isChecked, isHover: hover, isDisabled})`
+  :style="computedWidth"
   @mouseover="hover = true"
   @mouseout="hover = false")
   //- .baseCheckbox__input

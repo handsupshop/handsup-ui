@@ -93,7 +93,6 @@ export default {
 
   methods: {
     getStyle (item) {
-      // console.log(styleMapping[item])
       return styleMapping[item]
     },
     focus () {
