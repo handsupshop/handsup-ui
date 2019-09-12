@@ -39,9 +39,11 @@
 		## 數量限制 max
 
 	BaseCheckboxGroup(v-model="value5" :max="2")
-		BaseCheckbox(label="apple" button)
-		BaseCheckbox(label="banana" button)
-		BaseCheckbox(label="orange" button)
+		BaseCheckbox(label="美妝保養" button style="width: 200px")
+		BaseCheckbox(label="生鮮食品生鮮食品生生鮮食品生鮮食品生" button style="width: 200px")
+		BaseCheckbox(label="3C產品" button style="width: 200px")
+		BaseCheckbox(label="服飾穿搭" button style="width: 200px")
+
 	p {{ value5 }}
 	highlight-code(lang="javascript").
 		BaseCheckboxGroup(v-model="value5" :max="2")
