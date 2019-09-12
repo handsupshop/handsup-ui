@@ -1,10 +1,19 @@
-label.baseCheckbox(:class="[exportDisplay, exportDisabled]")
-  input.baseCheckbox-checkbox(
+label.baseCheckbox(:class=`getStyle('label')({
+  isButton: button, isChecked, isHover: hover, disabled: isDisabled})`
+  @mouseover="hover = true"
+  @mouseout="hover = false")
+  //- .baseCheckbox__input
+  //-   .baseCheckbox__inner
+  input(
     type="checkbox"
+    :class="getStyle('input')"
     :name="name"
-    :value="value"
-    :disabled="disabled"
-    v-on="$listeners"
-    v-model="picked")
-  i.baseCheckbox-icon
+    :value="label"
+    :disabled="disabled || isDisabled"
+    v-model="model"
+    @change="handleChange")
+  //- i.baseCheckbox-icon
+
   span {{ label }}
+  span(v-if="button && isChecked" :class="getStyle('prefix_checked')")
+    i.far.fa-check.text-primary
