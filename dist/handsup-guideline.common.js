@@ -4773,7 +4773,7 @@ var Message_component = normalizeComponent(
 
 /* harmony default export */ var Message = (Message_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b4fcc608-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./src/components/AppSteps/template.pug?vue&type=template&id=7f8474a4&scoped=true&lang=pug&
-var templatevue_type_template_id_7f8474a4_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ul',{staticClass:"steps"},_vm._l((_vm.displaySteps),function(step,index){return _c('li',{key:index,staticClass:"step",class:step.status},[_c('div',{staticClass:"step-icon mb-2"},[(step.icon)?_c('i',{class:step.icon}):_c('span',[_vm._v(_vm._s(index + 1))])]),_c('div',{staticClass:"toolbox"},[_c('div',{staticClass:"step-main"},[_vm._t("default",null,{"step":step})],2)]),_c('div',{staticClass:"step-line"})])}),0)}
+var templatevue_type_template_id_7f8474a4_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('ul',{staticClass:"appSteps"},_vm._l((_vm.displaySteps),function(step,index){return _c('li',{key:index,staticClass:"step",class:step.status},[_c('div',{staticClass:"step-icon mb-2"},[(step.icon)?_c('i',{class:step.icon}):_c('span',[_vm._v(_vm._s(index + 1))])]),_c('div',{staticClass:"toolbox"},[_c('div',{staticClass:"step-main"},[_vm._t("default",null,{"step":step})],2)]),_c('div',{staticClass:"step-line"})])}),0)}
 var templatevue_type_template_id_7f8474a4_scoped_true_lang_pug_staticRenderFns = []
 
 
