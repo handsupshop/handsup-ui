@@ -14,7 +14,8 @@ export default {
     disabled: Boolean,
     checked: Boolean,
     button: Boolean,
-    name: String
+    name: String,
+    flexWidth: String
   },
 
   data () {
@@ -92,6 +93,9 @@ export default {
 
     store () {
       return this.checkboxGroup ? this.checkboxGroup.value : this.value
+    },
+    computedWidth () {
+      return { 'flex': this.flexWidth, 'max-width': this.flexWidth }
     }
   },
 

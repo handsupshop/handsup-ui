@@ -1,5 +1,5 @@
 const labelStyle = {
-  default: 'text-gray-900 relative mr-2 cursor-pointer m-0',
+  default: 'text-gray-900 relative cursor-pointer mb-0',
   button: {
     default: 'border rounded pl-4 py-2 pr-6 bg-white inline-flex items-center',
     static: 'border-gray-600 text-gray-900',

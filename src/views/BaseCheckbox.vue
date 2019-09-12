@@ -11,6 +11,7 @@
 
 	:markdown-it
 		##  Button
+		為了維持彈性，均不加 `margin`
 
 	BaseCheckbox(label="apple" button v-model="value3")
 	BaseCheckbox(label="apple" button disabled v-model="value4")
@@ -39,10 +40,10 @@
 		## 數量限制 max
 
 	BaseCheckboxGroup(v-model="value5" :max="2")
-		BaseCheckbox(label="美妝保養" button style="width: 200px")
-		BaseCheckbox(label="生鮮食品生鮮食品生生鮮食品生鮮食品生" button style="width: 200px")
-		BaseCheckbox(label="3C產品" button style="width: 200px")
-		BaseCheckbox(label="服飾穿搭" button style="width: 200px")
+		BaseCheckbox(label="美妝保養" button)
+		BaseCheckbox(label="生鮮食品" button)
+		BaseCheckbox(label="3C產品" button)
+		BaseCheckbox(label="服飾穿搭" button)
 
 	p {{ value5 }}
 	highlight-code(lang="javascript").
@@ -51,11 +52,23 @@
 		BaseCheckbox(label="banana" button)
 		BaseCheckbox(label="orange" button)
 
+	:markdown-it
+		## flex
+		排版想要 `flex`，在 BaseCheckboxGroup 加上 `flex`，BaseCheckbox 加上 `flex-width`
+
+	BaseCheckboxGroup(v-model="value6" flex)
+		BaseCheckbox(v-for="(item, index) in list1" :key="index" :label="item" button flex-width="calc(25% - 8px)"
+		:class="{'mt-2': index > 3, 'mr-2': ((index + 1)%4 !== 0)}")
+	p {{ value6 }}
+	highlight-code(lang="javascript").
+		BaseCheckboxGroup(v-model="value6" flex)
+			BaseCheckbox(v-for="(item, index) in list1" :key="index" :label="item" button flex-width="calc(25% - 8px)"
+			:class="{'mt-2': index > 3, 'mr-2': ((index + 1)%4 !== 0)}")
+
 </template>
 
 <script>
 import BaseButton from '@/components/BaseButton'
-
 import BaseCheckbox from '@/components/BaseCheckbox'
 import BaseCheckboxGroup from '@/components/BaseCheckboxGroup'
 
@@ -67,13 +80,15 @@ export default {
   },
   data () {
     return {
+      list1: ['美妝保養', '生鮮食品', '3C產品', '服飾穿搭', '家電', '精品'],
       value1: false,
       value2: [],
       value3: false,
       value4: false,
       isError: false,
       errorMsg: '這是錯誤訊息',
-      value5: []
+      value5: [],
+      value6: []
     }
   }
 }

@@ -1,8 +1,8 @@
 export const styleMapping = {
-  inner: ({ isError }) => {
+  inner: ({ isFlex, isError }) => {
     return [
-      'inline-flex',
-      isError ? 'border border-danger p-2 rounded flex' : ''
+      isFlex ? 'flex flex-wrap' : '',
+      isError ? 'border border-danger p-2 rounded' : ''
     ]
   }
 }
