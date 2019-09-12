@@ -155,7 +155,7 @@ export default {
           (this.validateState && this.needStatusIcon)
     },
     calcCountPadding () {
-      const input = this.type !== 'textarea' ? this.$refs.textarea : this.$refs.input
+      const input = this.type === 'textarea' ? this.$refs.textarea : this.$refs.input
       input.style.paddingRight = (this.$refs.inputCount.clientWidth + 8 + 16) + 'px'
     }
   },
