@@ -3479,7 +3479,7 @@ var BaseButton_component = normalizeComponent(
 /* harmony default export */ var BaseButton = (BaseButton_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"b4fcc608-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/pug-plain-loader!./src/components/BaseCheckbox/template.pug?vue&type=template&id=0db10060&scoped=true&lang=pug&
 var templatevue_type_template_id_0db10060_scoped_true_lang_pug_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"baseCheckbox",class:_vm.getStyle('label')({
-  isButton: _vm.button, isChecked: _vm.isChecked, isHover: _vm.hover, disabled: _vm.isDisabled}),on:{"mouseover":function($event){_vm.hover = true},"mouseout":function($event){_vm.hover = false}}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.model),expression:"model"}],class:_vm.getStyle('input'),attrs:{"type":"checkbox","name":_vm.name,"disabled":_vm.disabled || _vm.isDisabled},domProps:{"value":_vm.label,"checked":Array.isArray(_vm.model)?_vm._i(_vm.model,_vm.label)>-1:(_vm.model)},on:{"change":[function($event){var $$a=_vm.model,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=_vm.label,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.model=$$a.concat([$$v]))}else{$$i>-1&&(_vm.model=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}}else{_vm.model=$$c}},_vm.handleChange]}}),_c('span',[_vm._v(_vm._s(_vm.label))]),(_vm.button && _vm.isChecked)?_c('span',{class:_vm.getStyle('prefix_checked')},[_c('i',{staticClass:"far fa-check text-primary"})]):_vm._e()])}
+  isButton: _vm.button, isChecked: _vm.isChecked, isHover: _vm.hover, isDisabled: _vm.isDisabled}),on:{"mouseover":function($event){_vm.hover = true},"mouseout":function($event){_vm.hover = false}}},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.model),expression:"model"}],class:_vm.getStyle('input'),attrs:{"type":"checkbox","name":_vm.name,"disabled":_vm.disabled || _vm.isDisabled},domProps:{"value":_vm.label,"checked":Array.isArray(_vm.model)?_vm._i(_vm.model,_vm.label)>-1:(_vm.model)},on:{"change":[function($event){var $$a=_vm.model,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=_vm.label,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.model=$$a.concat([$$v]))}else{$$i>-1&&(_vm.model=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}}else{_vm.model=$$c}},_vm.handleChange]}}),_c('span',[_vm._v(_vm._s(_vm.label))]),(_vm.button && _vm.isChecked)?_c('span',{class:_vm.getStyle('prefix_checked')},[_c('i',{staticClass:"far fa-check text-primary"})]):_vm._e()])}
 var templatevue_type_template_id_0db10060_scoped_true_lang_pug_staticRenderFns = []
 
 
@@ -3533,24 +3533,22 @@ function _toConsumableArray(arr) {
 var labelStyle = {
   default: 'text-gray-900 relative mr-2 cursor-pointer m-0',
   button: {
-    default: 'border rounded pl-4 py-2 pr-6 bg-white',
-    static: 'border-gray-600',
-    hover: 'border-primary-light',
-    checked: 'border-primary',
+    default: 'border rounded pl-4 py-2 pr-6 bg-white inline-flex items-center',
+    static: 'border-gray-600 text-gray-900',
+    hover: 'border-primary-light text-black',
+    checked: 'border-primary text-primary-dark',
     disabled: 'cursor-not-allowed border-gray-600 text-gray-800 bg-gray-100'
   }
 };
 function getLabelStyle(params) {
   var isButton = params.isButton,
-      _params$isHover = params.isHover,
-      isHover = _params$isHover === void 0 ? false : _params$isHover,
-      _params$isChecked = params.isChecked,
-      isChecked = _params$isChecked === void 0 ? false : _params$isChecked,
-      disabled = params.disabled;
+      isHover = params.isHover,
+      isChecked = params.isChecked,
+      isDisabled = params.isDisabled;
   var buttonStyle;
 
   if (isButton) {
-    buttonStyle = [labelStyle.button.default, (disabled ? labelStyle.button.disabled : '') || (isHover ? labelStyle.button.hover : '') || (isChecked ? labelStyle.button.checked : '') || labelStyle.button.static];
+    buttonStyle = [labelStyle.button.default, (isDisabled ? labelStyle.button.disabled : '') || (isHover ? labelStyle.button.hover : '') || (isChecked ? labelStyle.button.checked : '') || labelStyle.button.static];
   }
 
   return [labelStyle.default].concat(_toConsumableArray(isButton ? buttonStyle : ''));
@@ -3560,7 +3558,7 @@ var styleMapping = {
     return getLabelStyle(params);
   },
   input: 'hidden',
-  prefix_checked: 'absolute top-0 right-0 flex items-center h-full mr-2 '
+  prefix_checked: 'absolute top-0 right-0 flex items-center h-full mr-2'
 };
 // CONCATENATED MODULE: ./src/mixins/emitter.js
 
@@ -3763,7 +3761,7 @@ var es6_number_constructor = __webpack_require__("c5f6");
 var style_styleMapping = {
   inner: function inner(_ref) {
     var isError = _ref.isError;
-    return [isError ? 'border border-danger p-2 rounded flex' : ''];
+    return ['inline-flex', isError ? 'border border-danger p-2 rounded flex' : ''];
   }
 };
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/BaseCheckboxGroup/index.vue?vue&type=script&lang=js&
