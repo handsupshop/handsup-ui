@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import UiGuideline from './views/UiGuideline/index.vue'
 import BaseInput from './views/BaseInput.vue'
+import BaseCheckbox from './views/BaseCheckbox.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/base-input',
       name: 'baseInput',
       component: BaseInput
+    },
+    {
+      path: '/base-checkbox',
+      name: 'BaseCheckbox',
+      component: BaseCheckbox
     }
     // {
     //   path: '/about',

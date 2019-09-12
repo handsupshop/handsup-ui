@@ -1,24 +1,27 @@
 <script>
+import { styleMapping } from './style'
+
 export default {
+  name: 'BaseCheckboxGroup',
+  componentName: 'BaseCheckboxGroup',
   inheritAttrs: false,
   props: {
-    options: {
-      type: Array,
-      default: () => []
-    },
+    value: {},
+    disabled: Boolean,
+    min: Number,
+    max: Number,
     isError: {
       type: Boolean,
       default: false
     },
-    errorMessage: {
+    errorMsg: {
       type: String,
       default: '填寫錯誤'
     }
   },
-  name: 'BaseCheckboxGroup',
-  components: {},
-  data () {
-    return {
+  methods: {
+    getStyle (item) {
+      return styleMapping[item]
     }
   }
 }
