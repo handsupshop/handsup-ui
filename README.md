@@ -50,6 +50,6 @@ npm publish
 5. docs 打包
 ```shell
 yarn build:doc
-git add . && commit -m "build 版號"
+git add . && git commit -m "build 版號"
 git push
 ```
