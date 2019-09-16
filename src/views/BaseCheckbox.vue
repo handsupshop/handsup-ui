@@ -37,6 +37,22 @@
 		BaseCheckbox(label="orange" button)
 
 	:markdown-it
+		## 用 true-label 表示真實的值
+	BaseCheckboxGroup(v-model="value7")
+		BaseCheckbox(label="美妝保養" :true-label="1" button)
+		BaseCheckbox(label="生鮮食品" :true-label="2" button)
+		BaseCheckbox(label="3C產品" :true-label="3" button)
+		BaseCheckbox(label="服飾穿搭" :true-label="4" button)
+	p {{ value7 }}
+
+	highlight-code(lang="javascript").
+		BaseCheckboxGroup(v-model="value7")
+			BaseCheckbox(label="美妝保養" :true-label="1" button)
+			BaseCheckbox(label="生鮮食品" :true-label="2" button)
+			BaseCheckbox(label="3C產品" :true-label="3" button)
+			BaseCheckbox(label="服飾穿搭" :true-label="4" button)
+
+	:markdown-it
 		## 數量限制 max
 
 	BaseCheckboxGroup(v-model="value5" :max="2")
@@ -88,7 +104,8 @@ export default {
       isError: false,
       errorMsg: '這是錯誤訊息',
       value5: [],
-      value6: []
+      value6: [],
+      value7: []
     }
   }
 }

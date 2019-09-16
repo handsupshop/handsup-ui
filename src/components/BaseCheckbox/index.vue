@@ -15,6 +15,8 @@ export default {
     checked: Boolean,
     button: Boolean,
     name: String,
+    trueLabel: [String, Number],
+    falseLabel: [String, Number],
     flexWidth: String
   },
 
@@ -59,9 +61,10 @@ export default {
       if ({}.toString.call(this.model) === '[object Boolean]') {
         return this.model
       } else if (Array.isArray(this.model)) {
-        return this.model.indexOf(this.label) > -1
+        let label = this.trueLabel || this.label
+        return this.model.indexOf(label) > -1
       } else if (this.model !== null && this.model !== undefined) {
-        return this.model === this.label
+        return this.model === this.trueLabel
       }
       return false
     },
@@ -110,16 +113,16 @@ export default {
       ) {
         this.model.push(this.label)
       } else {
-        this.model = true
+        this.model = this.trueLabel || true
       }
     },
 
     handleChange (ev) {
       let value
       if (ev.target.checked) {
-        value = true
+        value = this.trueLabel === undefined ? true : this.trueLabel
       } else {
-        value = false
+        value = this.falseLabel === undefined ? false : this.falseLabel
       }
       this.$emit('change', value, ev)
       this.$nextTick(() => {
