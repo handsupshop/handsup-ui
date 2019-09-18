@@ -1,4 +1,4 @@
 .baseCheckboxGroup(role="group" aria-label="checkbox-group")
   .inner(:class="getStyle('inner')({isFlex: flex, isError})")
     slot
-  .mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}
+  .mt-1.ml-px.text-xs.text-danger.leading-tight(v-if="isError") {{ errorMessage }}

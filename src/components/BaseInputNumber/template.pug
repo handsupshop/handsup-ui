@@ -42,4 +42,4 @@
     @click.stop="increase"
     :disabled="isMaxDisabled"
     )
-  .absolute.mt-1.ml-px.text-xs.text-danger(v-if="isError") {{ errorMessage }}
+  .absolute.mt-1.ml-px.text-xs.text-danger.leading-tight(v-if="isError") {{ errorMessage }}
