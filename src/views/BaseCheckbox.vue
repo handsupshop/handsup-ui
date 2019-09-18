@@ -23,7 +23,7 @@
 	:markdown-it
 		## Group
 
-	BaseCheckboxGroup(v-model="value2" :isError="isError" :errorMsg="errorMsg")
+	BaseCheckboxGroup(v-model="value2" :isError="isError" :errorMessage="errorMessage")
 		BaseCheckbox(label="apple" button)
 		BaseCheckbox(label="banana" button)
 		BaseCheckbox(label="orange" button)
@@ -31,7 +31,7 @@
 	BaseButton(@click="isError = !isError") toggle error
 
 	highlight-code(lang="javascript").
-		BaseCheckboxGroup(v-model="value2" :isError="isError" :errorMsg="errorMsg")
+		BaseCheckboxGroup(v-model="value2" :isError="isError" :errorMessage="errorMessage")
 		BaseCheckbox(label="apple" button)
 		BaseCheckbox(label="banana" button)
 		BaseCheckbox(label="orange" button)
@@ -102,7 +102,7 @@ export default {
       value3: false,
       value4: false,
       isError: false,
-      errorMsg: '這是錯誤訊息',
+      errorMessage: '這是錯誤訊息',
       value5: [],
       value6: [],
       value7: []

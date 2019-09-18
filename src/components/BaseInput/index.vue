@@ -33,7 +33,7 @@ export default {
       type: Boolean,
       default: false
     },
-    errorMsg: String
+    errorMessage: String
   },
 
   computed: {

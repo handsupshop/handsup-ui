@@ -14,7 +14,7 @@ export default {
       type: Boolean,
       default: false
     },
-    errorMsg: {
+    errorMessage: {
       type: String,
       default: '填寫錯誤'
     },
