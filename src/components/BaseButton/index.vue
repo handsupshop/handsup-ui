@@ -116,13 +116,13 @@ export default {
       } else {
         switch (this.size) {
           case 'sm':
-            return ['py-2', 'px-4', 'text-xs', 'min-w-sm']
+            return ['py-2', 'px-4', 'text-xs', 'leading-tight', 'min-w-sm']
 
           case 'lg':
-            return ['py-3', 'px-4', 'text-base', 'min-w-lg']
+            return ['py-3', 'px-4', 'text-base', 'leading-none', 'min-w-lg']
 
           default:
-            return ['py-2', 'px-4', 'text-sm', 'min-w-md']
+            return ['py-2', 'px-4', 'text-sm', 'leading-tight', 'min-w-md']
         }
       }
     },

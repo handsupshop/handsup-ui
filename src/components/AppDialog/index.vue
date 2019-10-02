@@ -48,6 +48,7 @@ export default {
     },
     handleClose () {
       this.$emit('update:dialogVisible', false)
+      this.$emit('close')
     }
   }
 }
