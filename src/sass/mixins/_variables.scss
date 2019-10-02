@@ -18,10 +18,12 @@ $white: #ffffff;
 $black: #000000;
 $primary: #00ccff;
 $primary-dark: #03a9f4;
-$primary-light: rgba(#a3d0fd, 0.3);
+$primary-light: rgba($primary, 0.3);
 $primary-vr-light: #e9faff;
 $success: #4caf50;
+$success-vr-light: #edf7ed;
 $warning: #ff9800;
+$warning-vr-light: #fff4e5;
 $danger: #f56c6c;
 $danger-vr-light: #fcefef;
 $light: #909399;
@@ -58,20 +60,20 @@ $color-name: primary success warning danger mute;
 $colors: (
   primary: $primary,
   primary-dark: $primary-dark,
-  primary-light: lighten($primary, 30%),
-  primary-vr-light: lighten($primary, 45%),
+  primary-light: $primary-light,
+  primary-vr-light: $primary-vr-light,
   success: $success,
   success-dark: darken($success, 10%),
   success-light: lighten($success, 30%),
-  success-vr-light: lighten($success, 40%),
+  success-vr-light: $success-vr-light,
   warning: $warning,
   warning-dark: darken($warning, 10%),
   warning-light: lighten($warning, 30%),
-  warning-vr-light: lighten($warning, 40%),
+  warning-vr-light: $warning-vr-light,
   danger: $danger,
   danger-dark: darken($danger, 10%),
   danger-light: lighten($danger, 20%),
-  danger-vr-light: lighten($danger, 25%),
+  danger-vr-light: $danger-vr-light,
   mute: $light
 ) !default;
 

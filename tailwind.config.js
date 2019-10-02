@@ -183,15 +183,16 @@ module.exports = {
       h5: '18px',
       h6: '16px',
       sm: '0.875rem', // 14px
-      xs: '0.75rem' // 12px
-      // base: '1rem', // 16
-      // lg: '1.125rem', // 18
-      // xl: '1.25rem', // 20
-      // '2xl': '1.5rem', // 24
-      // '3xl': '1.875rem', // 30
-      // '4xl': '2.25rem', // 36
-      // '5xl': '3rem', // 48
-      // '6xl': '4rem' // 64
+      xs: '0.75rem', // 12px
+      // 以下未來將刪除
+      base: '1rem', // 16
+      lg: '1.125rem', // 18
+      xl: '1.25rem', // 20
+      '2xl': '1.5rem', // 24
+      '3xl': '1.875rem', // 30
+      '4xl': '2.25rem', // 36
+      '5xl': '3rem', // 48
+      '6xl': '4rem' // 64
     },
     fontWeight: {
       hairline: '100',
@@ -417,7 +418,7 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
-    function ({ addVariant, e }) {
+    function({ addVariant, e }) {
       addVariant('disabled', ({ modifySelectors, separator }) => {
         modifySelectors(({ className }) => {
           return `.${e(`disabled${separator}${className}`)}:disabled`
