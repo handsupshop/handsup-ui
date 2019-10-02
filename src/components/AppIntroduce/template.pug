@@ -1,0 +1,11 @@
+.appIntroduce.relative.mb-3.py-3.pl-3.pr-6.border.rounded-sm(
+  :class="computedClass")
+  i.icon-close.fal.fa-times.absolute.top-0.right-0.text-h5.text-gray-800.cursor-pointer(
+    v-if="closable"
+    class="hover:text-gray-900"
+    @click="handleClose"
+  )
+  .float-left.w-4.text-h6.text-center.leading-snug.far.fa-info-circle(
+    :class="computedIconClass")
+  .ml-6.leading-relaxed
+    slot

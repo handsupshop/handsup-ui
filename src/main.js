@@ -17,6 +17,7 @@ import BaseCheckboxGroup from '@/components/BaseCheckboxGroup/index.vue'
 // App Component
 import AppDialog from '@/components/AppDialog/index.vue'
 import AppAlert from '@/components/AppAlert/index.vue'
+import AppIntroduce from '@/components/AppIntroduce/index.vue'
 import AppSteps from '@/components/AppSteps/index.vue'
 import AppSelectList from '@/components/AppSelectList/index.vue'
 import AppSelectListItem from '@/components/AppSelectListItem/index.vue'
@@ -44,14 +45,15 @@ Vue.component('BaseCheckbox', BaseCheckbox)
 Vue.component('BaseCheckboxGroup', BaseCheckboxGroup)
 Vue.component('AppDialog', AppDialog)
 Vue.component('AppAlert', AppAlert)
+Vue.component('AppIntroduce', AppIntroduce)
 Vue.component('Message', Message)
 Vue.component('AppSteps', AppSteps)
 Vue.component('AppSelectList', AppSelectList)
 Vue.component('AppSelectListItem', AppSelectListItem)
 
 /*
-* Use Vue Highlight.js
-*/
+ * Use Vue Highlight.js
+ */
 Vue.use(VueHighlightJS, {
   // Register only languages that you want
   languages: {

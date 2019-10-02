@@ -1,0 +1,11 @@
+/* purgecss ignore */
+
+.appIntroduce{
+  .icon-close{
+    $size: 40px;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    text-align: center;
+  }
+}

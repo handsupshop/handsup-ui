@@ -438,6 +438,22 @@
     h4.my-8 Alert
     AppAlert 這是一個 Alert
 
+    h4.my-8 Introduce
+    div(class="w-1/2")
+      AppIntroduce 這是一個 Introduce
+      AppIntroduce(:closable="false")
+        p 沒有叉叉的 Introduce
+        p (:closable="false")
+      .flex
+        AppIntroduce.flex-1(type="primary")
+          p type="primary" (預設)
+        AppIntroduce.flex-1.ml-5(type="success")
+          p type="success"
+        AppIntroduce.flex-1.ml-5(type="warning")
+          p type="warning"
+        AppIntroduce.flex-1.ml-5(type="danger")
+          p type="danger"
+
     h4.my-8 Steps
     AppSteps.my-8(:steps="[{title: 'a' }, {title: 'b'}, {title: 'c'}]" :active="1")
       template(v-slot:default="{step}")
