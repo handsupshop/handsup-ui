@@ -14,6 +14,7 @@ export default {
   components: {},
   data () {
     return {
+      visible: true
     }
   },
   computed: {
@@ -27,8 +28,8 @@ export default {
     }
   },
   methods: {
-    handleClose () {
-      this.$emit('update:visible', false)
+    close () {
+      this.visible = false
       this.$emit('close')
     }
   }
