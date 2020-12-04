@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "highlight.js": "^9.15.10",
+    "highlight.js": "^10.4.1",
     "jstransformer-markdown-it": "^2.1.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
